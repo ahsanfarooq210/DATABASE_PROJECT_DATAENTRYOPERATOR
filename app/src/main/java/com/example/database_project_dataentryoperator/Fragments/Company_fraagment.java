@@ -24,13 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Sku_frament extends Fragment
+public class Company_fraagment extends Fragment
 {
-    private EditText catagoryet;
+
+    private EditText companyet;
     private Button save,back;
     private TextView message;
 
-    private DatabaseReference catagory;
+    private DatabaseReference company;
 
     private RelativeLayout rellay1,rally2,rellay2;
 
@@ -58,7 +59,8 @@ public class Sku_frament extends Fragment
             progressBar.setVisibility(View.GONE);
         }
     };
-    public Sku_frament()
+
+    public Company_fraagment()
     {
         // Required empty public constructor
     }
@@ -69,46 +71,47 @@ public class Sku_frament extends Fragment
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_sku_frament, container, false);
+        View v= inflater.inflate(R.layout.fragment_company_fraagment, container, false);
         //relative layout
-        rellay1 =v. findViewById(R.id.rellay1);
-        rally2=v.findViewById(R.id.bottom_rally2);
-        rellay2=v.findViewById(R.id.rellay2);
+        rellay1 =v. findViewById(R.id.company_rellay1);
+        rally2=v.findViewById(R.id.company_bottom_rally2);
+        rellay2=v.findViewById(R.id.company_rellay2);
+
         //edit text
-        catagoryet=v.findViewById(R.id.catagory_tf);
+        companyet=v.findViewById(R.id.company_tf);
         //progress bar
-        progressBar=v.findViewById(R.id.my_progress_bar);
+        progressBar=v.findViewById(R.id.company_my_progress_bar);
         progressBarh.postDelayed(runnable1,100);
         //buttons
-        save=v.findViewById(R.id.cataory_save_button);
-        back=v.findViewById(R.id.catagory_back);
+        save=v.findViewById(R.id.company_save_button);
+        back=v.findViewById(R.id.company_back);
         //textView
-        message=v.findViewById(R.id.catagory_message_text_view);
+        message=v.findViewById(R.id.company_message_text_view);
         //splash
         handler.postDelayed(runnable, 1000); //2000 is the timeout for the splash
-        //real time database
-        catagory= FirebaseDatabase.getInstance().getReference("CATAGORY");
+        //real time fatabase
+        company= FirebaseDatabase.getInstance().getReference("COMPANIES");
 
         save.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view)
             {
-                addCatagory();
+                addCompany();
             }
         });
         return v;
-
     }
 
-    public void addCatagory()
+
+    public void addCompany()
     {
         progressBar.setVisibility(View.VISIBLE);
-        String name=catagoryet.getText().toString();
+        String name=companyet.getText().toString();
         if(!TextUtils.isEmpty(name))
         {
-            String id=catagory.push().getKey();
+            String id=company.push().getKey();
             SkuCatagory skuCatagory=new SkuCatagory(id,name);
-            catagory.child(id).setValue(skuCatagory);
+            company.child(id).setValue(skuCatagory);
             progressBarh.postDelayed(runnable1,100);
             message.setText("Saved Successfully");
             Toast.makeText(getContext(), "Saved Successfully", Toast.LENGTH_SHORT).show();
