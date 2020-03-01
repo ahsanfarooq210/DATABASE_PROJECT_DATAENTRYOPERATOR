@@ -60,10 +60,15 @@ public class MainActivity extends AppCompatActivity
         rellay2=findViewById(R.id.rellay2);
 
         handler.postDelayed(runnable, 2000); //2000 is the timeout for the splash
+
         bottomTextView=findViewById(R.id.message_text_view);
+
+        usernameTf=findViewById(R.id.username_tf);
+        passeordTf=findViewById(R.id.password_tf);
 
         progressBar=findViewById(R.id.my_progress_bar);
         progressBarh.postDelayed(runnable1,100);
+
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -82,13 +87,14 @@ public class MainActivity extends AppCompatActivity
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            progressBarh.postDelayed(runnable1,100);
                             Intent intent=new Intent(MainActivity.this,Main_dashboard_activity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         } else {
                             // If sign in fails, display a message to the user.
-
+                            progressBarh.postDelayed(runnable1,100);
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 
