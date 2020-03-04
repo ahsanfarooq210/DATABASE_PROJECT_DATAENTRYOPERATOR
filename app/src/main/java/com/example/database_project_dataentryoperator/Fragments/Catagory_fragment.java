@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Sku_frament extends Fragment
+public class Catagory_fragment extends Fragment
 {
     private EditText catagoryet;
     private Button save,back;
@@ -58,7 +58,7 @@ public class Sku_frament extends Fragment
             progressBar.setVisibility(View.GONE);
         }
     };
-    public Sku_frament()
+    public Catagory_fragment()
     {
         // Required empty public constructor
     }
@@ -69,7 +69,7 @@ public class Sku_frament extends Fragment
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_sku_frament, container, false);
+        View v= inflater.inflate(R.layout.fragment_company_frament, container, false);
         //relative layout
         rellay1 =v. findViewById(R.id.rellay1);
         rally2=v.findViewById(R.id.bottom_rally2);
