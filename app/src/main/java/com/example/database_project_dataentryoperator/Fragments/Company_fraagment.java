@@ -96,6 +96,11 @@ public class Company_fraagment extends Fragment
             @Override
             public void onClick(View view)
             {
+                if(companyet.getText().toString().length()==0)
+                {
+                    companyet.setError("please enter a company");
+                    return;
+                }
                 addCompany();
             }
         });

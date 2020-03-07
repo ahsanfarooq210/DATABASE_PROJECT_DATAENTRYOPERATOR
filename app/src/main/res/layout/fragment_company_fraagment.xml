@@ -36,7 +36,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Catagory"
+                    android:text="Company"
                     android:textColor="@android:color/black"
                     android:textSize="30sp" />
 
@@ -57,7 +57,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-light"
-                            android:text="Enter the catagory"
+                            android:text="Enter the company"
                             android:textAllCaps="true"
                             android:textColor="@android:color/black"
                             android:textSize="15sp" />

@@ -38,7 +38,7 @@ public class Main_dashboard_activity extends AppCompatActivity
         navigationView.setCentreButtonSelected();
         //fragment
         sku_frament=new Catagory_fragment();
-        //getSupportFragmentManager().beginTransaction().add(R.id.main_dashboard_container,sku_frament).commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,sku_frament).commit();
          company_fraagment=new Company_fraagment();
 
 

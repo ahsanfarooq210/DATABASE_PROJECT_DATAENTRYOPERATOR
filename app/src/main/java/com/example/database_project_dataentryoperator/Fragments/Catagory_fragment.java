@@ -69,7 +69,7 @@ public class Catagory_fragment extends Fragment
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_company_frament, container, false);
+        View v= inflater.inflate(R.layout.fragment_catagory_frament, container, false);
         //relative layout
         rellay1 =v. findViewById(R.id.rellay1);
         rally2=v.findViewById(R.id.bottom_rally2);
@@ -93,6 +93,11 @@ public class Catagory_fragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                if(catagoryet.getText().toString().length()==0)
+                {
+                    catagoryet.setError("please enter a catagory");
+                    return;
+                }
                 addCatagory();
             }
         });
