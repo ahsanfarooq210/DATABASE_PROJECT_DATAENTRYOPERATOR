@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgView_logo"
-            android:visibility="gone">
+            android:visibility="">
 
             <TextView
                 android:id="@+id/tv_login"
@@ -57,13 +57,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Enter the sku"
+                        android:text="select company"
                         android:textAllCaps="true"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
 
-                    <EditText
-                        android:id="@+id/catagory_tf"
+                    <Spinner
+                        android:id="@+id/sku_company_spinner"
                         android:layout_width="match_parent"
 
                         android:layout_height="40dp"
@@ -74,16 +74,71 @@
                         android:paddingRight="15dp"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="select catagory"
+                        android:layout_marginTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
 
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@drawable/et_bg"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/sku_catagory_spinner"
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
+
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="enter the product name"
+                        android:layout_marginTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/et_bg"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/sku_product_edit_text"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="enter the product size"
+                        android:layout_marginTop="10dp"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/et_bg"
+                        android:layout_marginTop="10dp"
+                        android:inputType="numberDecimal"
+                        android:id="@+id/sku_product_size_edit_text"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
 

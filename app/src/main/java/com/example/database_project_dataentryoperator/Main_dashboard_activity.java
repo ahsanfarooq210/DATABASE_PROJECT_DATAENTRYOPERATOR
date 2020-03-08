@@ -22,8 +22,7 @@ public class Main_dashboard_activity extends AppCompatActivity
     Catagory_fragment sku_frament;
     Company_fraagment company_fraagment;
 
-    FragmentManager manager,manager1;
-    FragmentTransaction fragmentTransaction,fragmentTransaction1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
