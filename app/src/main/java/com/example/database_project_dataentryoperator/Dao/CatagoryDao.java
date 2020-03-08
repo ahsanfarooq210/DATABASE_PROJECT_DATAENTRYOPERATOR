@@ -14,14 +14,18 @@ import java.util.List;
 @Dao
 public interface CatagoryDao
 {
-  @Insert
-    void insert (CatagoryEntity catagoryEntity);
-  @Update
-    void update (CatagoryEntity catagoryEntity);
+    @Insert
+    void insert(CatagoryEntity catagoryEntity);
 
-  @Delete
-    void delete (CatagoryEntity catagoryEntity);
+    @Update
+    void update(CatagoryEntity catagoryEntity);
+
+    @Delete
+    void delete(CatagoryEntity catagoryEntity);
 
     @Query("SELECT * FROM catagory")
     List<CatagoryEntity> getAllCatagories();
+
+    @Query("SELECT catagory_name FROM catagory WHERE :idea=id")
+    List<String> getName(int idea);
 }
