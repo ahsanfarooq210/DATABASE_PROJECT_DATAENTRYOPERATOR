@@ -88,7 +88,7 @@ public class Company_fraagment extends Fragment
         //textView
         message=v.findViewById(R.id.company_message_text_view);
         //splash
-        handler.postDelayed(runnable, 1000); //2000 is the timeout for the splash
+        handler.postDelayed(runnable, 500); //2000 is the timeout for the splash
         //real time fatabase
         company= FirebaseDatabase.getInstance().getReference("COMPANIES");
 
@@ -101,6 +101,7 @@ public class Company_fraagment extends Fragment
                     companyet.setError("please enter a company");
                     return;
                 }
+                progressBar.setVisibility(View.VISIBLE);
                 addCompany();
             }
         });

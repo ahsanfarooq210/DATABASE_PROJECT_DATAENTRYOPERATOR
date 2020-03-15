@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/grad_bg"
-    tools:context=".Fragments.adding_sku_fragment">
+    tools:context=".Fragments.Adding_sku_fragment">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -24,11 +24,11 @@
             android:src="@drawable/icons8_product_64px" />
 
         <RelativeLayout
-            android:id="@+id/rellay1"
+            android:id="@+id/adding_sku_rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgView_logo"
-            android:visibility="">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_login"
@@ -57,7 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="select company"
+                        android:text="@string/select_company"
                         android:textAllCaps="true"
                         android:textColor="@android:color/black"
                         android:textSize="15sp" />
@@ -65,20 +65,23 @@
                     <Spinner
                         android:id="@+id/sku_company_spinner"
                         android:layout_width="match_parent"
-
+                        android:autofillHints="company"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/et_bg"
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
+                        android:animateLayoutChanges="true"
+                        android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:fontFamily="sans-serif-light"
-                        android:text="select catagory"
+                        android:text="@string/select_catagory"
                         android:layout_marginTop="10dp"
                         android:textAllCaps="true"
                         android:textColor="@android:color/black"
@@ -87,13 +90,14 @@
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/et_bg"
+
                         android:layout_marginTop="10dp"
                         android:id="@+id/sku_catagory_spinner"
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-
+                        android:animateLayoutChanges="true"
+                        android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
 
@@ -101,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="enter the product name"
+                        android:text="@string/enter_the_product_name"
                         android:layout_marginTop="10dp"
                         android:textAllCaps="true"
                         android:textColor="@android:color/black"
@@ -115,7 +119,9 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-
+                        android:textAlignment="center"
+                        android:hint="@string/product_name"
+                        android:textColorHint="@android:color/white"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
 
@@ -123,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="enter the product size"
+                        android:text="@string/enter_the_product_size"
                         android:layout_marginTop="10dp"
                         android:textAllCaps="true"
                         android:textColor="@android:color/black"
@@ -138,7 +144,9 @@
                         android:fontFamily="sans-serif-light"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
-
+                        android:textAlignment="center"
+                        android:hint="@string/product_size"
+                        android:textColorHint="@android:color/white"
                         android:textColor="@android:color/white"
                         android:textSize="15sp" />
 
@@ -176,7 +184,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="bottom"
-        android:id="@+id/bottom_rally2"
+        android:id="@+id/adding_sku_bottom_rally2"
         android:layout_alignParentBottom="true"
         android:visibility="gone">
         <TextView
@@ -188,7 +196,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rellay2"
+        android:id="@+id/adding_sku_rellay2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

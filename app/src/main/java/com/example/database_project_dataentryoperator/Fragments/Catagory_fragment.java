@@ -85,7 +85,7 @@ public class Catagory_fragment extends Fragment
         //textView
         message=v.findViewById(R.id.catagory_message_text_view);
         //splash
-        handler.postDelayed(runnable, 1000); //2000 is the timeout for the splash
+        handler.postDelayed(runnable, 500); //2000 is the timeout for the splash
         //real time database
         catagory= FirebaseDatabase.getInstance().getReference("CATAGORY");
 
@@ -98,6 +98,7 @@ public class Catagory_fragment extends Fragment
                     catagoryet.setError("please enter a catagory");
                     return;
                 }
+                progressBar.setVisibility(View.VISIBLE);
                 addCatagory();
             }
         });

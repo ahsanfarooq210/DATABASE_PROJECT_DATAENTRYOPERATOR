@@ -1,12 +1,11 @@
 package com.example.database_project_dataentryoperator;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.database_project_dataentryoperator.Fragments.Adding_sku_fragment;
 import com.example.database_project_dataentryoperator.Fragments.Company_fraagment;
 import com.example.database_project_dataentryoperator.Fragments.Catagory_fragment;
 import com.luseen.spacenavigation.SpaceItem;
@@ -18,10 +17,10 @@ public class Main_dashboard_activity extends AppCompatActivity
 
     SpaceNavigationView navigationView;
 
-    int error=1000;
+
     Catagory_fragment sku_frament;
     Company_fraagment company_fraagment;
-
+    Adding_sku_fragment adding_sku_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,16 +36,17 @@ public class Main_dashboard_activity extends AppCompatActivity
         navigationView.setCentreButtonSelected();
         //fragment
         sku_frament=new Catagory_fragment();
-        //getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,sku_frament).commit();
-         company_fraagment=new Company_fraagment();
 
+         company_fraagment=new Company_fraagment();
+        adding_sku_fragment=new Adding_sku_fragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,adding_sku_fragment).commit();
 
 
         navigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
                 Toast.makeText(Main_dashboard_activity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
-               // getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,homescreenfragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,adding_sku_fragment).commit();
             }
 
             @Override
@@ -54,7 +54,7 @@ public class Main_dashboard_activity extends AppCompatActivity
 
                 //
                 Toast.makeText(Main_dashboard_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
-                if(itemIndex==0&&error!=itemIndex)
+                if(itemIndex==0)
                 {
 
                    getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,sku_frament).commit();
@@ -69,7 +69,7 @@ public class Main_dashboard_activity extends AppCompatActivity
 
                     }
                 }
-                error=itemIndex;
+
 
             }
 

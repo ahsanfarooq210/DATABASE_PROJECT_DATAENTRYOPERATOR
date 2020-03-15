@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.luseen.spacenavigation.SpaceNavigationView;
 
 public class MainActivity extends AppCompatActivity
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity
     EditText usernameTf,passeordTf;
 
     private FirebaseAuth mAuth;
+
+    DatabaseReference referencecompany,referencecatagory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -70,6 +75,14 @@ public class MainActivity extends AppCompatActivity
         progressBarh.postDelayed(runnable1,100);
 
         mAuth = FirebaseAuth.getInstance();
+
+        referencecompany=FirebaseDatabase.getInstance().getReference().child("CATAGORY");
+        referencecatagory=FirebaseDatabase.getInstance().getReference().child("COMPANIES");
+        referencecatagory.keepSynced(true);
+        referencecompany.keepSynced(true);
+
+
+
     }
 
     public void loginButton(View view)
