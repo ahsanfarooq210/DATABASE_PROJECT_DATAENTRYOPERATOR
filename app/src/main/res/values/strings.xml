@@ -9,4 +9,5 @@
     <string name="enter_the_product_name">enter the product name</string>
     <string name="select_catagory">select catagory</string>
     <string name="select_company">select company</string>
+    <string name="enter_a_catagory">Please type a catagory</string>
 </resources>

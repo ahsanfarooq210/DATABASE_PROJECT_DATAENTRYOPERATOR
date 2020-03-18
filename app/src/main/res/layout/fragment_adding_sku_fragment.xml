@@ -16,29 +16,31 @@
         android:layout_marginRight="40dp">
 
         <ImageView
-            android:id="@+id/imgView_logo"
+            android:id="@+id/sku_imgView_logo"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_product_64px" />
 
+
         <RelativeLayout
             android:id="@+id/adding_sku_rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgView_logo"
+            android:layout_below="@+id/sku_imgView_logo"
             android:visibility="gone">
-
             <TextView
                 android:id="@+id/tv_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+
                 android:fontFamily="sans-serif-medium"
                 android:text="SKU"
+
                 android:textColor="@android:color/black"
                 android:textSize="30sp" />
+
 
             <LinearLayout
                 android:id="@+id/linlay1"
@@ -90,7 +92,7 @@
                     <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-
+                        android:background="@drawable/et_bg"
                         android:layout_marginTop="10dp"
                         android:id="@+id/sku_catagory_spinner"
                         android:fontFamily="sans-serif-light"
@@ -162,13 +164,13 @@
                 android:layout_below="@+id/linlay1"
                 android:layout_centerHorizontal="true"
                 android:clickable="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/btn_bg"
                 android:fontFamily="sans-serif-medium"
                 android:paddingLeft="70dp"
                 android:paddingRight="70dp"
                 android:text="Save"
-                android:id="@+id/cataory_save_button"
+                android:id="@+id/sku_save_button"
 
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
@@ -186,6 +188,7 @@
         android:gravity="bottom"
         android:id="@+id/adding_sku_bottom_rally2"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:visibility="gone">
         <TextView
             android:layout_width="wrap_content"
@@ -202,7 +205,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:layout_alignParentRight="true">
 
 
         <Button

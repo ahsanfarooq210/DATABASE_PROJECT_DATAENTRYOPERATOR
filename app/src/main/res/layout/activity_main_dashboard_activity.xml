@@ -23,7 +23,7 @@
         android:layout_marginBottom="0dp"
         app:active_item_color="@android:color/holo_blue_bright"
         app:centre_button_color="@color/crimson"
-        app:centre_button_icon="@drawable/icons8_minimize_window_64px"
+        app:centre_button_icon="@drawable/icons8_product_64px"
         app:inactive_item_color="@android:color/white"
         app:space_background_color="@color/colorPrimary"
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"

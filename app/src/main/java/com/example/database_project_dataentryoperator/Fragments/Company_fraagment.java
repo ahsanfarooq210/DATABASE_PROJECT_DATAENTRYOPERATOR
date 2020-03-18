@@ -125,7 +125,9 @@ public class Company_fraagment extends Fragment
         }
         else
         {
-            message.setText("Please type a catagory");
+            progressBarh.postDelayed(runnable1,100);
+            message.setText(R.string.enter_a_catagory);
+            companyet.setError("Please type a catagory");
         }
     }
 }
