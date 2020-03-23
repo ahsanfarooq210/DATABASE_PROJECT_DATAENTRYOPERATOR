@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:animateLayoutChanges="true"
     android:layout_height="match_parent"
-    tools:context=".Main_dashboard_activity">
+    tools:context=".Main_dashboard_adding_sku_activity">
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -19,7 +19,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.luseen.spacenavigation.SpaceNavigationView;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             progressBarh.postDelayed(runnable1,100);
-                            Intent intent=new Intent(MainActivity.this,Main_dashboard_activity.class);
+                            Intent intent=new Intent(MainActivity.this, Main_dashboard_adding_sku_activity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 

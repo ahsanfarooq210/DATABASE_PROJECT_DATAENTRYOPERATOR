@@ -12,7 +12,7 @@ import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
 
-public class Main_dashboard_activity extends AppCompatActivity
+public class Main_dashboard_adding_sku_activity extends AppCompatActivity
 {
 
     SpaceNavigationView navigationView;
@@ -48,7 +48,7 @@ public class Main_dashboard_activity extends AppCompatActivity
         navigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
-                Toast.makeText(Main_dashboard_activity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main_dashboard_adding_sku_activity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_container,adding_sku_fragment).commit();
             }
 
@@ -56,7 +56,7 @@ public class Main_dashboard_activity extends AppCompatActivity
             public void onItemClick(int itemIndex, String itemName) {
 
                 //
-                Toast.makeText(Main_dashboard_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main_dashboard_adding_sku_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
                 if(itemIndex==0)
                 {
 
@@ -78,7 +78,7 @@ public class Main_dashboard_activity extends AppCompatActivity
 
             @Override
             public void onItemReselected(int itemIndex, String itemName) {
-                Toast.makeText(Main_dashboard_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Main_dashboard_adding_sku_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
 
             }
         });

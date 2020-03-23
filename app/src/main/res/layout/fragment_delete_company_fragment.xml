@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.delete_company_fragment"
+    android:animateLayoutChanges="true">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        android:animateLayoutChanges="true"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:id="@+id/delete_sku_logo"
+            android:src="@drawable/icons8_box_52px_1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/delete_sku_logo"
+            android:gravity="center"
+            android:id="@+id/delete_sku_fragment_rellay1"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:id="@+id/delete_sku_linear1"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="30sp"
+                    android:text="Delete SKU"
+                    android:layout_below="@id/delete_sku_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/delete_sku_spinner"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/dekete_sku_instruction_set"
+                    android:text="Select the sku"
+                    android:textColor="@android:color/black"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/delete_sku_spinner"
+                    android:background="@drawable/et_bg" />
+
+
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/delete_sku_linear1"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_bg"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:text="Delete SKU"
+                android:id="@+id/sku_delete_button"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
