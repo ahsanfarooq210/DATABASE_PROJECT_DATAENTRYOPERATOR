@@ -8,6 +8,7 @@
         android:background="@drawable/grad_bg"
         tools:context=".Fragments.Company_fraagment">
 
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,8 +18,8 @@
 
             <ImageView
                 android:id="@+id/imgView_logo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/icons8_new_company_80px" />

@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/imgView_logo"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/icons8_sorting_64px" />

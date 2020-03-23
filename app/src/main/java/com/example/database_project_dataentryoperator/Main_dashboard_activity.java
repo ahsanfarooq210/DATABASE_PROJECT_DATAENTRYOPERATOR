@@ -26,14 +26,17 @@ public class Main_dashboard_activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_dashboard_activity);
+        setContentView(R.layout.activity_add_sku_main_dashboard);
         //navigation view
         navigationView=findViewById(R.id.space);
         navigationView.initWithSaveInstanceState(savedInstanceState);
+        //navigationView.addSpaceItem(new SpaceItem("",R.drawable.icons8_delete_file_64px_2));
         navigationView.addSpaceItem(new SpaceItem("", R.drawable.icons8_sorting_64px));
+        navigationView.setCentreButtonIcon(R.drawable.icons8_product_documents_64px_1);
         navigationView.addSpaceItem(new SpaceItem("", R.drawable.icons8_new_company_80px));
+       // navigationView.addSpaceItem(new SpaceItem("",R.drawable.icons8_delete_document_64px));
         navigationView.setCentreButtonSelectable(true);
-        navigationView.setCentreButtonSelected();
+
         //fragment
         sku_frament=new Catagory_fragment();
 

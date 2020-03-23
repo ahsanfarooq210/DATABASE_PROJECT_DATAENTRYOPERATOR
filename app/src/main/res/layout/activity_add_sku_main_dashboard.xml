@@ -23,11 +23,10 @@
         android:layout_marginBottom="0dp"
         app:active_item_color="@android:color/holo_blue_bright"
         app:centre_button_color="@color/crimson"
-        app:centre_button_icon="@drawable/icons8_product_64px"
         app:inactive_item_color="@android:color/white"
         app:space_background_color="@color/colorPrimary"
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
-        app:space_item_icon_size="30dp"
+        app:space_item_icon_size="25dp"
         app:space_item_text_size="@dimen/space_item_text_default_size" />
 
 </RelativeLayout>
