@@ -79,12 +79,9 @@ public class Sku
     @Override
     public String toString()
     {
-        return "Sku{" +
-                "id=" + id +
-                ", company=" + company.toString()+
-                ", catagory=" + catagory.toString() +
-                ", productName='" + productName + '\'' +
-                ", size=" + size +
-                '}';
+        return company.toString()+
+                " " + catagory.toString() +
+                " " + productName  +
+                " " + size;
     }
 }

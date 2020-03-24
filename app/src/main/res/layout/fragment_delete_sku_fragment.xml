@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Delete_company_fragment"
+    tools:context=".Fragments.Delete_sku_fragment"
+    android:animateLayoutChanges="true"
     android:layout_gravity="center"
-    android:gravity="center"
-    android:animateLayoutChanges="true">
+    android:gravity="center">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -22,14 +22,14 @@
             android:layout_height="60dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:id="@+id/delete_company_logo"
-            android:src="@drawable/icons8_delete_file_64px_2"/>
+            android:id="@+id/delete_sku_logo"
+            android:src="@drawable/icons8_box_52px_1"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/delete_company_logo"
-            android:id="@+id/delete_company_fragment_linear1"
+            android:layout_below="@+id/delete_sku_logo"
+            android:id="@+id/delete_sku_fragment_linear1"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:layout_centerInParent="true"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:id="@+id/delete_company_linear1"
+                android:id="@+id/delete_sku_linear1"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:orientation="vertical">
@@ -49,13 +49,14 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="30sp"
-                    android:text="Delete Company"
-                    android:layout_below="@id/delete_company_logo" />
+
+                    android:text="Delete SKU"
+                    android:layout_below="@id/delete_sku_logo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/delete_company_spinner"
+                    android:layout_above="@+id/delete_sku_spinner"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-light"
                     android:layout_marginTop="10dp"
@@ -65,9 +66,9 @@
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="80dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/delete_company_spinner"
+                    android:id="@+id/delete_sku_spinner"
                     android:background="@drawable/et_bg" />
 
                 <Button
@@ -81,9 +82,9 @@
                     android:fontFamily="sans-serif-medium"
                     android:paddingLeft="70dp"
                     android:paddingRight="70dp"
-                    android:text="Delete Company"
+                    android:text="Delete SKU"
                     android:layout_gravity="center"
-                    android:id="@+id/company_delete_button"
+                    android:id="@+id/sku_delete_button"
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
@@ -99,5 +100,6 @@
 
 
     </RelativeLayout>
+
 
 </RelativeLayout>

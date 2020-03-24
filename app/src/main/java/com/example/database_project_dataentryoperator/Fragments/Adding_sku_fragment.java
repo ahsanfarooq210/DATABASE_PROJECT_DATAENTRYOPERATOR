@@ -191,6 +191,8 @@ public class Adding_sku_fragment extends Fragment
         return v;
       }
 
+
+
     @Override
     public void onStart()
     {
