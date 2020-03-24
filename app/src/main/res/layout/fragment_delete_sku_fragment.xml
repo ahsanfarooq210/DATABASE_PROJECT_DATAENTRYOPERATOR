@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_gravity="center"
         android:gravity="center">
         <ImageView
@@ -35,7 +35,7 @@
             android:layout_centerInParent="true"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
-            android:visibility="">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,10 +66,18 @@
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/delete_sku_spinner"
-                    android:background="@drawable/et_bg" />
+                    android:autofillHints="company"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/et_bg"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:animateLayoutChanges="true"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:id="@+id/delete_sku_spinner"/>
 
                 <Button
                     android:layout_width="wrap_content"

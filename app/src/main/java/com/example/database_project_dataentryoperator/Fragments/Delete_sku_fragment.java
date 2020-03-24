@@ -104,9 +104,13 @@ public class Delete_sku_fragment extends Fragment
             public void onClick(View v)
             {
                 Sku sku= (Sku) skuSpinner.getSelectedItem();
-                skuReferenceDelete=FirebaseDatabase.getInstance().getReference("SKU").child(sku.getId());
-                skuReferenceDelete.removeValue();
-                Toast.makeText(getContext(), "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                if(sku!=null)
+                {
+                    skuReferenceDelete=FirebaseDatabase.getInstance().getReference("SKU").child(sku.getId());
+                    skuReferenceDelete.removeValue();
+                    Toast.makeText(getContext(), "Deleted Successfully", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
