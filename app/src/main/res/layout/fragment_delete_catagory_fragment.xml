@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Delete_company_fragment"
+    tools:context=".Fragments.Delete_catagory_fragment"
     android:layout_gravity="center"
-    android:gravity="center"
-    android:animateLayoutChanges="true">
+    android:gravity="center">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -22,14 +21,14 @@
             android:layout_height="60dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:id="@+id/delete_company_logo"
-            android:src="@drawable/icons8_delete_file_64px_2"/>
+            android:id="@+id/delete_catagory_logo"
+            android:src="@drawable/icons8_delete_document_64px"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/delete_company_logo"
-            android:id="@+id/delete_company_fragment_linear1"
+            android:layout_below="@+id/delete_catagory_logo"
+            android:id="@+id/delete_catagory_fragment_linear1"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:layout_centerInParent="true"
@@ -40,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:id="@+id/delete_company_linear1"
+                android:id="@+id/delete_catagory_linear1"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:orientation="vertical">
@@ -49,23 +48,23 @@
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
                     android:textSize="30sp"
-                    android:text="Delete Company"
-                    android:layout_below="@id/delete_company_logo" />
+                    android:text="Delete catagory"
+                    android:layout_below="@id/delete_catagory_logo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/delete_company_spinner"
+                    android:layout_above="@+id/delete_catagory_spinner"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-light"
                     android:layout_marginTop="10dp"
                     android:id="@+id/dekete_sku_instruction_set"
-                    android:text="Select the company"
+                    android:text="Select the catagory"
                     android:textColor="@android:color/black"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:autofillHints="company"
+                    android:autofillHints="catagory"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/et_bg"
@@ -76,7 +75,7 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="15sp"
-                    android:id="@+id/delete_company_spinner" />
+                    android:id="@+id/delete_catagory_spinner" />
 
                 <Button
                     android:layout_width="wrap_content"
@@ -89,9 +88,9 @@
                     android:fontFamily="sans-serif-medium"
                     android:paddingLeft="70dp"
                     android:paddingRight="70dp"
-                    android:text="Delete Company"
+                    android:text="Delete catagory"
                     android:layout_gravity="center"
-                    android:id="@+id/company_delete_button"
+                    android:id="@+id/catagory_delete_button"
                     android:gravity="center"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
