@@ -36,6 +36,7 @@ public class Main_dashboard_adding_sku_activity extends AppCompatActivity
         navigationView.addSpaceItem(new SpaceItem("", R.drawable.icons8_new_company_80px));
        // navigationView.addSpaceItem(new SpaceItem("",R.drawable.icons8_delete_document_64px));
         navigationView.setCentreButtonSelectable(true);
+        navigationView.setCentreButtonSelected();
 
         //fragment
         sku_frament=new Catagory_fragment();

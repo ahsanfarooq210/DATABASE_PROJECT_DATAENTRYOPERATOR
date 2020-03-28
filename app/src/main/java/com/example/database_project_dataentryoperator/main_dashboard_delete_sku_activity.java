@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.database_project_dataentryoperator.Fragments.Delete_catagory_fragment;
 import com.example.database_project_dataentryoperator.Fragments.Delete_company_fragment;
 import com.example.database_project_dataentryoperator.Fragments.Delete_sku_fragment;
 import com.luseen.spacenavigation.SpaceItem;
@@ -19,6 +20,7 @@ public class main_dashboard_delete_sku_activity extends AppCompatActivity
     //fragtmetns classes
     private Delete_sku_fragment delete_sku_fragment;
     private Delete_company_fragment delete_company_fragment;
+    private Delete_catagory_fragment delete_catagory_fragment;
 
 
     @Override
@@ -35,10 +37,14 @@ public class main_dashboard_delete_sku_activity extends AppCompatActivity
         navigationView.addSpaceItem(new SpaceItem("", R.drawable.icons8_delete_file_64px_2));
         // navigationView.addSpaceItem(new SpaceItem("",R.drawable.icons8_delete_document_64px));
         navigationView.setCentreButtonSelectable(true);
+        navigationView.setCentreButtonSelected();
 
         //initializing the delete sku fragment
         delete_sku_fragment=new Delete_sku_fragment();
         delete_company_fragment=new Delete_company_fragment();
+        delete_catagory_fragment=new Delete_catagory_fragment();
+
+        //opening the first fragment in the begining
         getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_delete_container,delete_sku_fragment).commit();
         navigationView.setSpaceOnClickListener(new SpaceOnClickListener()
         {
@@ -55,7 +61,7 @@ public class main_dashboard_delete_sku_activity extends AppCompatActivity
                 Toast.makeText(main_dashboard_delete_sku_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
                 if(itemIndex==0)
                 {
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_delete_container,delete_catagory_fragment).commit();
                 }
                 else
                 {
