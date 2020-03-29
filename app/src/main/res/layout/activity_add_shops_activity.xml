@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".add_shops_activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    android:gravity="center">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -13,18 +15,26 @@
         android:layout_height="match_parent"
         android:id="@+id/map"
         tools:context=".MapsActivity"
+        android:layout_above="@+id/cnfrm_coordinates"
         android:name="com.google.android.gms.maps.SupportMapFragment" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:background="@drawable/btn_bg"
-        android:text="confirm coordinates"
-        android:textColor="@android:color/white"
+        android:clickable="true"
         android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif"
+        android:background="@drawable/btn_bg"
+        android:fontFamily="sans-serif-medium"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:text="Confirm Location"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:id="@+id/cnfrm_coordinates"
-        android:gravity="bottom"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
         android:visibility="gone"/>
 
-</LinearLayout>
+</RelativeLayout>
