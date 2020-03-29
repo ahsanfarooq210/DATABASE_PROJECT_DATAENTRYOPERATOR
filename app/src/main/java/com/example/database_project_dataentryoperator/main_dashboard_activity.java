@@ -57,4 +57,10 @@ public class main_dashboard_activity extends AppCompatActivity
     {
 
     }
+    public void addSop(View view)
+    {
+        Intent intent=new Intent(this,add_shops_activity.class);
+        startActivity(intent);
+    }
+
 }

@@ -32,6 +32,8 @@ public class MapsMarkers extends AppCompatActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapsmarkers_activity);
+
+
         txtMarkers = (TextView) findViewById(R.id.txtMarkerText);
         final SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -72,8 +74,8 @@ public class MapsMarkers extends AppCompatActivity implements OnMapReadyCallback
                         if (address.size() > 0) {
                             mMap.addMarker(new MarkerOptions().position(latLng).title("Name:" + address.get(0).getCountryName()
                                     + ". Address:" + address.get(0).getAddressLine(0)));
-                            txtMarkers.setText("Name:" + address.get(0).getCountryName()
-                                    + ". Address:" + address.get(0).getAddressLine(0));
+                            Toast.makeText(MapsMarkers.this, "latitude "+latLng.latitude+" longitude "+latLng.longitude, Toast.LENGTH_SHORT).show();
+                            txtMarkers.setText("Name:" + address.get(0).getCountryName() + ". Address:" + address.get(0).getAddressLine(0));
                         }
                     } catch (IOException ex) {
                         if (ex != null)
@@ -85,6 +87,7 @@ public class MapsMarkers extends AppCompatActivity implements OnMapReadyCallback
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
+
                     txtMarkers.setText(marker.getTitle().toString() + " Lat:" + marker.getPosition().latitude + " Long:" + marker.getPosition().longitude);
                     return false;
                 }
