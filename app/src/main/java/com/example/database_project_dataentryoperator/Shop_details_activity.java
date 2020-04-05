@@ -83,6 +83,7 @@ public class Shop_details_activity extends AppCompatActivity
                 ShopDetails shopDetails=new ShopDetails(id,latLng,stradress,strOwnerName,strOwnerCnic,strShopName,strOwnerMobile);
                 shopreference.child(id).setValue(shopDetails);
                 progressBarh.postDelayed(runnable1,100);
+                Toast.makeText(Shop_details_activity.this, "shop added successfully", Toast.LENGTH_SHORT).show();
             }
 
         });
