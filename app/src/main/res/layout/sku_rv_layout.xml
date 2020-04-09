@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/sku_recyclerview_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <androidx.cardview.widget.CardView
         android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:onClick="showSku"
-        android:id="@+id/show_sku_card"
         android:layout_width="match_parent"
         android:layout_height="190dp"
         android:layout_margin="10dp"
@@ -25,7 +22,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/sku_id"
-                android:textStyle="bold"
                 android:text="id"
                 android:textColor="@android:color/white"/>
             <TextView
@@ -33,6 +29,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Show SKU"
+                android:textStyle="bold"
+                android:textSize="15sp"
                 android:id="@+id/sku_definition"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@android:color/white"/>

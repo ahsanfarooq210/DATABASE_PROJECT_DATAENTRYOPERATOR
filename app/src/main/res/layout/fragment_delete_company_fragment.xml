@@ -16,6 +16,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_gravity="center"
+        android:animateLayoutChanges="true"
         android:gravity="center">
         <ImageView
             android:layout_width="60dp"

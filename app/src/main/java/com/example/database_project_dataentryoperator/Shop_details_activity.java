@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import java.util.Locale;
 
 public class Shop_details_activity extends AppCompatActivity
 {
+    private RelativeLayout relativeLayout;
     private Button save;
     private EditText ownerName,ownerCnic,shopName,ownerMobile;
     private Geocoder geo;
@@ -40,6 +42,15 @@ public class Shop_details_activity extends AppCompatActivity
             progressBar.setVisibility(View.GONE);
         }
     };
+    private Handler handler=new Handler();
+    private Runnable runnable=new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            relativeLayout.setVisibility(View.VISIBLE);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,7 +58,10 @@ public class Shop_details_activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_details_activity);
         progressBar=findViewById(R.id.shop_details_my_progress_bar);
+        relativeLayout=findViewById(R.id.shop_details_relative_layout);
+        progressBarh.postDelayed(runnable1,100);
         latLng=getIntent().getExtras().getParcelable("latlan");
+        handler.postDelayed(runnable,1000);
         geo = new Geocoder(Shop_details_activity.this, Locale.getDefault());
         try
         {
@@ -80,9 +94,10 @@ public class Shop_details_activity extends AppCompatActivity
                 String strOwnerName=ownerName.getText().toString().trim();
                 String strShopName=shopName.getText().toString().trim(),strOwnerCnic=ownerCnic.getText().toString().trim(),strOwnerMobile=ownerMobile.getText().toString().trim();
                 String id=shopreference.push().getKey();
-                ShopDetails shopDetails=new ShopDetails(id,latLng,stradress,strOwnerName,strOwnerCnic,strShopName,strOwnerMobile);
+                double lati=latLng.latitude,longi=latLng.longitude;
+                ShopDetails shopDetails=new ShopDetails(id,lati,longi,stradress,strOwnerName,strOwnerCnic,strShopName,strOwnerMobile);
                 shopreference.child(id).setValue(shopDetails);
-                progressBarh.postDelayed(runnable1,100);
+                progressBarh.postDelayed(runnable1,300);
                 Toast.makeText(Shop_details_activity.this, "shop added successfully", Toast.LENGTH_SHORT).show();
             }
 

@@ -14,6 +14,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_gravity="center"
+        android:animateLayoutChanges="true"
         android:gravity="center">
         <ImageView
             android:id="@+id/shop_details_imgView_logo"
@@ -28,8 +29,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:animateLayoutChanges="true"
+                android:id="@+id/shop_details_relative_layout"
                 android:layout_below="@+id/shop_details_imgView_logo"
-                android:visibility="gon">
+                android:visibility="gone">
                 <TextView
                     android:id="@+id/shop_details_typo"
                     android:layout_width="wrap_content"

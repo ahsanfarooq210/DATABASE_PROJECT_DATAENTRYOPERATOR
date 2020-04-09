@@ -55,12 +55,19 @@ public class main_dashboard_activity extends AppCompatActivity
     }
     public void  showSku(View view)
     {
-
+        Intent intent=new Intent(this,show_sku_rv_activity.class);
+        startActivity(intent);
     }
     public void addSop(View view)
     {
         Intent intent=new Intent(this,add_shops_activity.class);
         startActivity(intent);
     }
+    public void showShop(View view)
+    {
+        Intent intent=new Intent(this,show_shop_activity.class);
+        startActivity(intent);
+    }
+
 
 }

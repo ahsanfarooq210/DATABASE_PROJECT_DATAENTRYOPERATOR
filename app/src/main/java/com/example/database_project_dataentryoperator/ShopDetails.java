@@ -5,14 +5,20 @@ import com.google.android.gms.maps.model.LatLng;
 public class ShopDetails
 {
     private String id;
-    private LatLng latLng;
+    private double latitude,longitude;
     private String adress,ownerName,ownerCnic,shopName,ownerMobile;
 
+    public ShopDetails()
+    {
 
-    public ShopDetails(String id, LatLng latLng, String adress, String ownerName, String ownerCnic, String shopName, String ownerMobile)
+    }
+
+
+    public ShopDetails(String id, double latitude, double longitude, String adress, String ownerName, String ownerCnic, String shopName, String ownerMobile)
     {
         this.id = id;
-        this.latLng = latLng;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.adress = adress;
         this.ownerName = ownerName;
         this.ownerCnic = ownerCnic;
@@ -30,14 +36,24 @@ public class ShopDetails
         this.id = id;
     }
 
-    public LatLng getLatLng()
+    public double getLatitude()
     {
-        return latLng;
+        return latitude;
     }
 
-    public void setLatLng(LatLng latLng)
+    public void setLatitude(double latitude)
     {
-        this.latLng = latLng;
+        this.latitude = latitude;
+    }
+
+    public double getLongitude()
+    {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude)
+    {
+        this.longitude = longitude;
     }
 
     public String getAdress()

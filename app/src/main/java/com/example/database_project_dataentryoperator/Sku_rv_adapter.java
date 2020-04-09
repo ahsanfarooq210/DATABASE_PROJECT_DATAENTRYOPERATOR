@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +48,7 @@ public class Sku_rv_adapter extends RecyclerView.Adapter<Sku_rv_adapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        EditText id,description;
+        TextView id,description;
 
         public ViewHolder(@NonNull View itemView)
         {

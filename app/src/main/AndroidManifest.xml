@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".show_sku_rv_activity"></activity>
+        <activity android:name=".show_shop_activity"></activity>
+        <activity android:name=".show_sku_rv_activity" />
         <activity android:name=".Shop_details_activity" />
         <activity android:name=".add_shops_activity" />
 

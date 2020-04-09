@@ -171,42 +171,46 @@
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/colorPrimary"
                         app:cardCornerRadius="20dp">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:background="@drawable/oval_black"
-                                android:src="@drawable/icons8_barcode_50px"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold"
-                                android:layout_marginTop="10dp"
-                                android:text="Show SKU"
-                                android:fontFamily="sans-serif-light"
-                                android:textColor="@android:color/white"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/white"
-                                android:layout_margin="10dp"/>
+                                android:src="@drawable/icons8_barcode_50px" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold"
-                                android:layout_marginLeft="7dp"
-                                android:layout_marginRight="7dp"
                                 android:layout_marginTop="10dp"
-                                android:layout_gravity="center"
-                                android:text="Click to show sku , product or catagory"
                                 android:fontFamily="sans-serif-light"
-                                android:textColor="@android:color/white"/>
+                                android:text="Show SKU"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_margin="10dp"
+                                android:background="@android:color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="7dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="7dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Click to show sku , product or catagory"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
@@ -329,6 +333,7 @@
                     <androidx.cardview.widget.CardView
                         android:foreground="?android:attr/selectableItemBackground"
                         android:clickable="true"
+                        android:onClick="showShop"
                         android:id="@+id/show_shop_card"
                         android:layout_width="match_parent"
                         android:layout_height="190dp"
