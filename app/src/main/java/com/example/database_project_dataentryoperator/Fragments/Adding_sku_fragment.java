@@ -1,11 +1,6 @@
 package com.example.database_project_dataentryoperator.Fragments;
 
-import android.opengl.EGLExt;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.example.database_project_dataentryoperator.R;
 import com.example.database_project_dataentryoperator.Sku;
