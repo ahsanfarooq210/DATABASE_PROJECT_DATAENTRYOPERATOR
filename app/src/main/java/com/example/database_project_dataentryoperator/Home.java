@@ -1,5 +1,9 @@
 package com.example.database_project_dataentryoperator;
 
-public class Home
+import android.app.Application;
+
+public class Home extends Application
 {
+
+
 }
