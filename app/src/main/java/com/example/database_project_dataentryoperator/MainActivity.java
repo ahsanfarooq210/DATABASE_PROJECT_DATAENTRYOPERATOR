@@ -100,14 +100,14 @@ public class MainActivity extends AppCompatActivity
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             progressBarh.postDelayed(runnable1,100);
-                            Intent intent=new Intent(MainActivity.this, Main_dashboard_adding_sku_activity.class);
+                            Intent intent=new Intent(MainActivity.this, main_dashboard_activity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
 
                         } else {
                             // If sign in fails, display a message to the user.
                             progressBarh.postDelayed(runnable1,100);
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                            Toast.makeText(MainActivity.this, "Error in login",
                                     Toast.LENGTH_SHORT).show();
 
                         }

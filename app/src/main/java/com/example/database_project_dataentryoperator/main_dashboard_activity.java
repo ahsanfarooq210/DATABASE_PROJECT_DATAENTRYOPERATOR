@@ -9,8 +9,16 @@ import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class main_dashboard_activity extends AppCompatActivity
 {
+    //employeee name
+    TextView nameplate;
+    //firebase user
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
     //dasboard name plate
     private TextView dashboard_nameplate;
     //scroll view
@@ -34,6 +42,14 @@ public class main_dashboard_activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dashboard_activity);
 
+        //maindashboard name plate
+        nameplate=findViewById(R.id.dashboard_name_plate);
+
+        //getting the user
+        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
+        if(firebaseUser!=null)
+        nameplate.setText(firebaseUser.getEmail());
         //initializing namplate and scroll view
         dashboard_nameplate=findViewById(R.id.dashboard_name_plate);
         dashboardScrollView=findViewById(R.id.dashboard_scroll_view);
