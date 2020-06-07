@@ -1,6 +1,4 @@
-package com.example.database_project_dataentryoperator;
-
-import com.google.android.gms.maps.model.LatLng;
+package com.example.database_project_dataentryoperator.ShopActivities;
 
 public class ShopDetails
 {

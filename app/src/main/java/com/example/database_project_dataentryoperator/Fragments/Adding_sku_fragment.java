@@ -18,9 +18,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.database_project_dataentryoperator.R;
-import com.example.database_project_dataentryoperator.Sku;
-import com.example.database_project_dataentryoperator.SkuCatagory;
-import com.example.database_project_dataentryoperator.SkuCompany;
+import com.example.database_project_dataentryoperator.SKUActivities.Sku;
+import com.example.database_project_dataentryoperator.SKUActivities.SkuCatagory;
+import com.example.database_project_dataentryoperator.SKUActivities.SkuCompany;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

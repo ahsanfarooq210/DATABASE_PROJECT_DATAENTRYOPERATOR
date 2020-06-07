@@ -16,9 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.database_project_dataentryoperator.R;
-import com.example.database_project_dataentryoperator.SkuCatagory;
-import com.example.database_project_dataentryoperator.SkuCatagory;
-import com.example.database_project_dataentryoperator.SkuCompany;
+import com.example.database_project_dataentryoperator.SKUActivities.SkuCatagory;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

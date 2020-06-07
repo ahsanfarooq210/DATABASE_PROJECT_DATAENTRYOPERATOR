@@ -1,4 +1,4 @@
-package com.example.database_project_dataentryoperator;
+package com.example.database_project_dataentryoperator.SKUActivities;
 
 public class Sku
 {

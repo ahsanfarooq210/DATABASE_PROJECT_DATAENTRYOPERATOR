@@ -14,26 +14,72 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".show_shop_activity"></activity>
-        <activity android:name=".show_sku_rv_activity" />
-        <activity android:name=".Shop_details_activity" />
-        <activity android:name=".add_shops_activity" />
+        <activity android:name=".ShopActivities.delete_shops_activity"
+            android:label=""
+            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".ProfileActivities.activity_View_Profile"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivities.activity_Edit_Profile"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@menu/activity_main_actions" />
+
+        <activity
+            android:name=".ShopActivities.show_shop_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SKUActivities.show_sku_rv_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShopActivities.Shop_details_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShopActivities.add_shops_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-
-        <activity android:name=".main_dashboard_activity">
+        <activity
+            android:name=".main_dashboard_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main_dashboard_delete_sku_activity" />
-        <activity android:name=".Main_dashboard_adding_sku_activity" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".SKUActivities.main_dashboard_delete_sku_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SKUActivities.Main_dashboard_adding_sku_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver android:name=".BrodcastReceivers.LocationBrodcast">
+            <intent-filter>
+                <action android:name="android.location.GPS_ENABLED_CHANGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

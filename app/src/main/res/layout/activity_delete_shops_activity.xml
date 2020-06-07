@@ -11,12 +11,12 @@
 
 
     <fragment
-        android:id="@+id/add_shop_map"
+        android:id="@+id/delete_shop_map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="example.com.mapexample.MapsActivity"
-    android:layout_above="@+id/cnfrm_coordinates"
+        android:layout_above="@+id/cnfrm_coordinates"
         />
     <Button
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:text="@string/confirm_location"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
-        android:id="@+id/cnfrm_coordinates"
+        android:id="@+id/cnfrm_Shop_delete"
         android:layout_alignParentBottom="true"
         android:gravity="center"
         android:textAllCaps="false"

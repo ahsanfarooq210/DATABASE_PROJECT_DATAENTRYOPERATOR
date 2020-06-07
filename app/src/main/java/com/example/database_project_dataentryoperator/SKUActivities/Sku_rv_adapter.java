@@ -1,15 +1,16 @@
-package com.example.database_project_dataentryoperator;
+package com.example.database_project_dataentryoperator.SKUActivities;
 
 import android.app.Activity;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.database_project_dataentryoperator.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.database_project_dataentryoperator;
+package com.example.database_project_dataentryoperator.SKUActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.example.database_project_dataentryoperator.Fragments.Delete_catagory_fragment;
 import com.example.database_project_dataentryoperator.Fragments.Delete_company_fragment;
 import com.example.database_project_dataentryoperator.Fragments.Delete_sku_fragment;
+import com.example.database_project_dataentryoperator.R;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
@@ -51,14 +52,14 @@ public class main_dashboard_delete_sku_activity extends AppCompatActivity
             @Override
             public void onCentreButtonClick()
             {
-                Toast.makeText(main_dashboard_delete_sku_activity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(main_dashboard_delete_sku_activity.this,"onCentreButtonClick", Toast.LENGTH_SHORT).show();
                 getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_delete_container,delete_sku_fragment).commit();
             }
 
             @Override
             public void onItemClick(int itemIndex, String itemName)
             {
-                Toast.makeText(main_dashboard_delete_sku_activity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(main_dashboard_delete_sku_activity.this, itemIndex + "101 " + itemName, Toast.LENGTH_SHORT).show();
                 if(itemIndex==0)
                 {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_dashboard_delete_container,delete_catagory_fragment).commit();

@@ -1,4 +1,4 @@
-package com.example.database_project_dataentryoperator;
+package com.example.database_project_dataentryoperator.ShopActivities;
 
 import android.location.Address;
 import android.location.Geocoder;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.database_project_dataentryoperator.R;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
