@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<RelativeLayout
+    android:background="#60c2ec"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <fragment
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      tools:context="example.com.mapexample.MapsActivity"
+      android:name="com.google.android.gms.maps.SupportMapFragment"
+      android:id="@+id/show_shop_map"
+      xmlns:map="http://schemas.android.com/apk/res-auto"/>
+
+</RelativeLayout>

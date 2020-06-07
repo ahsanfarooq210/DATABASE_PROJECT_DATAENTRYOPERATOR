@@ -1,5 +1,6 @@
 package com.example.database_project_dataentryoperator.ShopActivities;
 
+
 import android.Manifest;
 import android.app.ActionBar;
 import android.app.SearchManager;
@@ -49,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class show_shop_activity extends AppCompatActivity implements ActionBar.OnNavigationListener ,
+public class Show_Shop_Activity extends AppCompatActivity  implements ActionBar.OnNavigationListener ,
         OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener{
 
@@ -77,11 +78,11 @@ public class show_shop_activity extends AppCompatActivity implements ActionBar.O
 
 
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_shop_activity);
+        setContentView(R.layout.activity_show__shop);
         actionBar = getActionBar();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -227,48 +228,48 @@ public class show_shop_activity extends AppCompatActivity implements ActionBar.O
 //location thing ahead
 
 
-  /*  @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.clear();
-        geo = new Geocoder(show_shop_activity.this, Locale.getDefault());
+    /*  @Override
+      public void onMapReady(GoogleMap googleMap) {
+          mMap = googleMap;
+          mMap.clear();
+          geo = new Geocoder(show_shop_activity.this, Locale.getDefault());
 
-        if (mMap != null) {
-
-
-            mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-                @Override
-                public boolean onMarkerClick(Marker marker) {
-                    Toast.makeText(show_shop_activity.this, marker.getTitle().toString() + " Lat:" + marker.getPosition().latitude + " Long:" + marker.getPosition().longitude, Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            });
-        }
-    }
-*/
-  @Override
-  public void onMapReady(GoogleMap googleMap) {
-      mMap = googleMap;
-      mMap.getUiSettings().setZoomControlsEnabled(true);
-      mMap.getUiSettings().setZoomGesturesEnabled(true);
-
-      geo = new Geocoder(show_shop_activity.this, Locale.getDefault());
+          if (mMap != null) {
 
 
-      if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-          if (ContextCompat.checkSelfPermission(this,
-                  Manifest.permission.ACCESS_FINE_LOCATION)
-                  == PackageManager.PERMISSION_GRANTED) {
-              buildGoogleApiClient();
-              mMap.setMyLocationEnabled(true);
+              mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                  @Override
+                  public boolean onMarkerClick(Marker marker) {
+                      Toast.makeText(show_shop_activity.this, marker.getTitle().toString() + " Lat:" + marker.getPosition().latitude + " Long:" + marker.getPosition().longitude, Toast.LENGTH_SHORT).show();
+                      return false;
+                  }
+              });
           }
       }
-      else {
-          buildGoogleApiClient();
-          mMap.setMyLocationEnabled(true);
-      }
+  */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setZoomGesturesEnabled(true);
 
-  }
+        geo = new Geocoder(Show_Shop_Activity.this, Locale.getDefault());
+
+
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                buildGoogleApiClient();
+                mMap.setMyLocationEnabled(true);
+            }
+        }
+        else {
+            buildGoogleApiClient();
+            mMap.setMyLocationEnabled(true);
+        }
+
+    }
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -311,8 +312,8 @@ public class show_shop_activity extends AppCompatActivity implements ActionBar.O
         markerOptions.title("Current Position");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
-    //zoom to current city
-       // mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
+        //zoom to current city
+        // mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
         //zoom to current location
       /*  LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Criteria criteria = new Criteria();
@@ -385,7 +386,7 @@ public class show_shop_activity extends AppCompatActivity implements ActionBar.O
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError)
             {
-                Toast.makeText(show_shop_activity.this, "error in downloading the data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Show_Shop_Activity.this, "error in downloading the data", Toast.LENGTH_SHORT).show();
             }
         });
     }

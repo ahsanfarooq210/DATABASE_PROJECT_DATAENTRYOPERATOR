@@ -28,14 +28,16 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import com.example.database_project_dataentryoperator.ProfileActivities.activity_Edit_Profile;
 import com.example.database_project_dataentryoperator.ProfileActivities.activity_View_Profile;
 import com.example.database_project_dataentryoperator.SKUActivities.Main_dashboard_adding_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.main_dashboard_delete_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.show_sku_rv_activity;
 import com.example.database_project_dataentryoperator.ShopActivities.add_shops_activity;
-import com.example.database_project_dataentryoperator.ShopActivities.show_shop_activity;
+import com.example.database_project_dataentryoperator.ShopActivities.Show_Shop_Activity;
 import com.example.database_project_dataentryoperator.ShopActivities.delete_shops_activity;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -351,7 +353,7 @@ public void onBackPressed() {
     }
     public void showShop(View view)
     {
-        Intent intent=new Intent(this, show_shop_activity.class);
+        Intent intent=new Intent(this, Show_Shop_Activity.class);
         startActivity(intent);
     }
     public void deleteShop(View view)
