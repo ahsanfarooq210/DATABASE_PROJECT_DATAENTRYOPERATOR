@@ -121,8 +121,8 @@ public class main_dashboard_activity extends AppCompatActivity
         //getting the user
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
-        if(firebaseUser!=null)
-        nameplate.setText(firebaseUser.getEmail());
+        //if(firebaseUser!=null)
+        //nameplate.setText(firebaseUser.getEmail());
         //initializing namplate and scroll view
         dashboard_nameplate=findViewById(R.id.dashboard_name_plate);
         dashboardScrollView=findViewById(R.id.dashboard_scroll_view);
@@ -133,9 +133,10 @@ public class main_dashboard_activity extends AppCompatActivity
     }
     private void loadNavHeader() {
         // name, website
-       // assert firebaseUser != null;
+       assert firebaseUser != null;
         txtName.setText("Data Entry Operator");
-        txtWebsite.setText("firebaseUser.getEmail().trim()");
+        if(firebaseUser!=null)
+        { txtWebsite.setText(firebaseUser.getEmail().trim());}
         // loading header background image
         Glide.with(this).load(urlNavHeaderBg)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -280,7 +281,6 @@ public void onBackPressed() {
             return;
         }
     }
-
     //super.onBackPressed();
 }
 
@@ -308,7 +308,10 @@ public void onBackPressed() {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
-            Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
+            FirebaseAuth.getInstance().signOut();
+            Intent intent=new Intent(main_dashboard_activity.this, MainActivity.class);
+            startActivity(intent);
             return true;
         }
 
