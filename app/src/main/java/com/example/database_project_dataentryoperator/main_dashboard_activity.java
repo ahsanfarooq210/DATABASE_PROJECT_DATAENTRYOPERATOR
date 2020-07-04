@@ -275,13 +275,13 @@ public void onBackPressed() {
         // checking if user is on other navigation menu
         // rather than home
         if (navItemIndex != 0) {
-            navItemIndex = 0;
+            navItemIndex = -1;
             load();
             return;
         }
     }
 
-    super.onBackPressed();
+    //super.onBackPressed();
 }
 
     @Override
