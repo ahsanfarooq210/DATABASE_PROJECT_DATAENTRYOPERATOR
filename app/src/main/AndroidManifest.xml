@@ -1,79 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.example.database_project_dataentryoperator">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.database_project_dataentryoperator">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-<application
-    android:name=".DatabaseProjectDataEntryOperator"
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
+    <application
+        android:name=".DatabaseProjectDataEntryOperator"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ProfileActivities.setting_activity"></activity>
 
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="@string/map_key" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
 
-    <activity
-        android:name=".ShopActivities.add_shops_activity"
-        android:theme="@style/AppTheme"
-        android:label="" />
-    <activity android:name=".ShopActivities.Show_Shop_Activity"
-        android:theme="@style/AppTheme"
-        android:label=""></activity>
-    <activity
-        android:name=".ShopActivities.delete_shops_activity"
-        android:theme="@style/AppTheme"
-        android:label="" />
-    <activity
-        android:name=".ShopActivities.Shop_details_activity"
-        android:theme="@style/AppTheme"
-        android:label="" />
-    <activity
-        android:name=".SKUActivities.show_sku_rv_activity"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:label="" />
-    <activity
-        android:name=".SKUActivities.main_dashboard_delete_sku_activity"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:label="" />
-    <activity
-        android:name=".SKUActivities.Main_dashboard_adding_sku_activity"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:label="" />
-    <activity
-        android:name=".ProfileActivities.activity_Edit_Profile"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:label="" />
-    <activity
-        android:name=".ProfileActivities.activity_View_Profile"
-        android:theme="@style/AppTheme.NoActionBar"
-        android:label="" />
-    <activity
-        android:name=".main_dashboard_activity"
-        android:label=""
-        android:theme="@style/AppTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name=".ShopActivities.add_shops_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ShopActivities.Show_Shop_Activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ShopActivities.delete_shops_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ShopActivities.Shop_details_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SKUActivities.show_sku_rv_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SKUActivities.main_dashboard_delete_sku_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SKUActivities.Main_dashboard_adding_sku_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivities.activity_Edit_Profile"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivities.activity_View_Profile"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".main_dashboard_activity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-    <activity
-        android:name=".MainActivity"
-        android:theme="@style/AppTheme.NoActionBar">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
