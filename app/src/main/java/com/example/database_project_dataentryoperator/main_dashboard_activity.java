@@ -31,6 +31,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import com.example.database_project_dataentryoperator.ProfileActivities.activity_Edit_Profile;
 import com.example.database_project_dataentryoperator.ProfileActivities.activity_View_Profile;
+import com.example.database_project_dataentryoperator.ProfileActivities.setting_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.Main_dashboard_adding_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.main_dashboard_delete_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.show_sku_rv_activity;
@@ -183,9 +184,9 @@ public class main_dashboard_activity extends AppCompatActivity
                 break;
             case 3:
                 // settings
-                // Intent setting =new Intent(main_dashboard_activity.this,setting_activity.class);
-                //startActivity(setting);
-                Toast.makeText(main_dashboard_activity.this,"setting",Toast.LENGTH_LONG).show();
+                Intent setting =new Intent(main_dashboard_activity.this, setting_activity.class);
+                startActivity(setting);
+                //Toast.makeText(main_dashboard_activity.this,"setting",Toast.LENGTH_LONG).show();
 
                 break;
             case 4:

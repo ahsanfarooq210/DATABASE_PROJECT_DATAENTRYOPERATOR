@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivities.setting_activity"></activity>
+        <activity android:name=".ProfileActivities.setting_activity"
+            android:label=""
+            android:theme="@style/AppTheme"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
