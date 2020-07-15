@@ -8,7 +8,7 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginLeft="20dp"
@@ -21,15 +21,16 @@
             android:layout_height="80dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:visibility="gone"
-            android:src="@drawable/ic_launcher_background" />
+            android:visibility="visible"
+            android:src="@drawable/setting" />
 
         <RelativeLayout
-            android:id="@+id/rellay1"
+            android:id="@+id/rellay_setting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgView_logo"
             android:layout_marginTop="2dp"
+            android:visibility="gone"
             android:animateLayoutChanges="true">
 
             <TextView
@@ -122,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="bottom"
-        android:id="@+id/bottom_rally2"
+        android:id="@+id/bottom_rally_setting"
         android:layout_alignParentBottom="true"
         android:visibility="gone">
         <TextView
@@ -134,7 +135,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rellay2"
+        android:id="@+id/rellay2_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -4,16 +4,42 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 import com.example.database_project_dataentryoperator.R;
 import com.example.database_project_dataentryoperator.main_dashboard_activity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class setting_activity extends AppCompatActivity {
+    private RelativeLayout rellay1,rally2,rellay2;
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+
+            rellay1.setVisibility(View.VISIBLE);
+            rally2.setVisibility(View.VISIBLE);
+            rellay2.setVisibility(View.VISIBLE);
+
+        }
+    };
+    private ProgressBar progressBar;
+    private Handler progressBarh=new Handler();
+    private Runnable runnable1=new Runnable()
+    {
+        @Override
+        public void run()
+        {
+
+            progressBar.setVisibility(View.GONE);
+        }
+    };
 TextInputEditText username_tf_setting,current_password_tf_setting,new_password_tf_setting,confirm_password_tf_setting;
     RadioGroup Radio_Group_setting_font,Radio_Group_setting_text_size;
     int select_font,select_text_size;
@@ -23,7 +49,14 @@ TextInputEditText username_tf_setting,current_password_tf_setting,new_password_t
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        rellay1 = findViewById(R.id.rellay_setting);
+        rally2=findViewById(R.id.bottom_rally_setting);
+        rellay2=findViewById(R.id.rellay2_setting);
 
+        handler.postDelayed(runnable, 2000); //2000 is the timeout for the splash
+
+        progressBar=findViewById(R.id.my_progress_bar);
+        progressBarh.postDelayed(runnable1,100);
         //connecting TextInputEditText
         username_tf_setting=findViewById(R.id.username_tf_setting);
         current_password_tf_setting=findViewById(R.id.current_password_tf_setting);
