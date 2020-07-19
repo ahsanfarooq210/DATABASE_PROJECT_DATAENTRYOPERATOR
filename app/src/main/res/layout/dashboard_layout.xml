@@ -276,12 +276,13 @@ android:animateLayoutChanges="true">
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:id="@+id/delete_shop_card"
+                    android:onClick="editShop"
                     android:layout_width="160dp"
-                    android:onClick="deleteShop"
                     android:layout_height="190dp"
                     android:layout_margin="10dp"
                     app:cardBackgroundColor="@color/colorPrimary"
@@ -296,13 +297,13 @@ android:animateLayoutChanges="true">
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:background="@drawable/oval_black"
-                            android:src="@drawable/icons8_delete_64px"/>
+                            android:src="@drawable/icons8_edit_50px"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:layout_marginTop="10dp"
-                            android:text="Delete shop"
+                            android:text="Edit shop"
                             android:fontFamily="sans-serif-light"
                             android:textColor="@android:color/white"/>
                         <View
@@ -318,12 +319,14 @@ android:animateLayoutChanges="true">
                             android:layout_marginLeft="7dp"
                             android:layout_marginRight="7dp"
                             android:layout_marginTop="10dp"
-                            android:text="Click to delete shop"
+                            android:layout_gravity="center"
+                            android:text="Click to Edit shop"
                             android:fontFamily="sans-serif-light"
                             android:textColor="@android:color/white"/>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

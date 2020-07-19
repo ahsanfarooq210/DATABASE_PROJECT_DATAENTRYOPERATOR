@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopActivities.Edit_shop_form">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:animateLayoutChanges="true"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/edit_shop_details_imgView_logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons8_online_store_240px" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:animateLayoutChanges="true"
+            android:id="@+id/edit_shop_details_relative_layout"
+            android:layout_below="@+id/edit_shop_details_imgView_logo"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/edit_shop_details_typo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Edit Shop Details"
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_shop_details_typo"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_marginTop="10dp"
+                    android:text="Shop owner's name"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/et_bg"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/edit_shop_owner_name"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Shop owner's CNIC (without dashes)"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/et_bg"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/edit_shop_owner_cnic"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Shop name"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/et_bg"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/edit_shop_shop_name"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Owner's mobile number"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/et_bg"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/edit_shop_details_ownernumber"
+                    android:fontFamily="sans-serif-light"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_bg"
+                    android:text="Save"
+                    android:id="@+id/edit_sop_details_save_button"
+                    android:textColor="@android:color/white"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="sans-serif-condensed-medium"/>
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_shop_details_my_progress_bar"
+                    android:indeterminateDrawable="@drawable/progress_bar_ring"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

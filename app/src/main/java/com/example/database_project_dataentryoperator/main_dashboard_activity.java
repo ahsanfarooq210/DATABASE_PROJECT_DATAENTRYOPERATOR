@@ -37,7 +37,7 @@ import com.example.database_project_dataentryoperator.SKUActivities.main_dashboa
 import com.example.database_project_dataentryoperator.SKUActivities.show_sku_rv_activity;
 import com.example.database_project_dataentryoperator.ShopActivities.add_shops_activity;
 import com.example.database_project_dataentryoperator.ShopActivities.Show_Shop_Activity;
-import com.example.database_project_dataentryoperator.ShopActivities.delete_shops_activity;
+import com.example.database_project_dataentryoperator.ShopActivities.Edit_shops_rv_activity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -360,9 +360,9 @@ public void onBackPressed() {
         Intent intent=new Intent(this, Show_Shop_Activity.class);
         startActivity(intent);
     }
-    public void deleteShop(View view)
+    public void editShop(View view)
     {
-        Intent intent=new Intent(this, delete_shops_activity.class);
+        Intent intent=new Intent(this, Edit_shops_rv_activity.class);
         startActivity(intent);
     }
 

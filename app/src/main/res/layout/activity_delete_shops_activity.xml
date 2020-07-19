@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#60c2ec"
-    tools:context=".ShopActivities.add_shops_activity"
-    android:orientation="vertical"
-    android:animateLayoutChanges="true"
-    android:gravity="center">
+    tools:context=".ShopActivities.Edit_shops_rv_activity">
 
-
-    <fragment
-        android:id="@+id/delete_shop_map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="example.com.mapexample.MapsActivity"
-        android:layout_above="@+id/cnfrm_coordinates"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:clickable="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_bg"
-        android:fontFamily="sans-serif-medium"
-        android:paddingLeft="70dp"
-        android:paddingRight="70dp"
-        android:text="@string/confirm_location"
-        android:layout_gravity="center"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/cnfrm_Shop_delete"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:visibility="gone"
-        android:focusable="true" />
+        android:id="@+id/show_shop_recycler_view"/>
 
-</RelativeLayout>
+
+</LinearLayout>

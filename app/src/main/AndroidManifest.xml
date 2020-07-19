@@ -16,6 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShopActivities.Edit_shop_form"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label=""></activity>
+        <activity
+            android:name=".ShopActivities.Edit_shops_rv_activity"
+            android:label=""
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".ProfileActivities.setting_activity"
             android:label=""
@@ -31,10 +38,6 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ShopActivities.Show_Shop_Activity"
-            android:label=""
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ShopActivities.delete_shops_activity"
             android:label=""
             android:theme="@style/AppTheme" />
         <activity
