@@ -84,6 +84,7 @@ public class Sku_rv_adapter extends RecyclerView.Adapter<Sku_rv_adapter.ViewHold
                     temps.add(skuArray.get(i));
                 }*/
             }
+            //
             this.skuArrayList = temps;
             notifyDataSetChanged();
         }
