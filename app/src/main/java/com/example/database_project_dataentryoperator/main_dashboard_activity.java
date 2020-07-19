@@ -18,6 +18,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,7 +57,7 @@ public class main_dashboard_activity extends AppCompatActivity
     private ImageView imgNavHeaderBg, imgProfile;
     private TextView txtName, txtWebsite;
     private Toolbar toolbar;
-    private FloatingActionButton fab;
+
 
     // urls to load navigation header background image
     // and profile image
@@ -353,13 +354,34 @@ public void onBackPressed() {
     }
     public void addSop(View view)
     {
-        Intent intent=new Intent(this, add_shops_activity.class);
-        startActivity(intent);
+        if(isLocationEnabled(this)) {
+
+            if (checkPermission()) {
+                startActivity(new Intent(main_dashboard_activity.this,add_shops_activity.class));
+            } else {
+
+                requestPermission();
+            }
+        }else{
+            Intent intent=new Intent(this, add_shops_activity.class);
+            startActivity(intent);
+        }
+
     }
     public void showShop(View view)
-    {
+    {if(isLocationEnabled(this)) {
+
+        if (checkPermission()) {
+            startActivity(new Intent(main_dashboard_activity.this,Show_Shop_Activity.class));
+        } else {
+
+            requestPermission();
+        }
+    }else{
         Intent intent=new Intent(this, Show_Shop_Activity.class);
         startActivity(intent);
+    }
+
     }
     public void editShop(View view)
     {
@@ -367,12 +389,10 @@ public void onBackPressed() {
         startActivity(intent);
     }
 
-
     private boolean isLocationEnabled(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return LocationManagerCompat.isLocationEnabled(locationManager);
     }
-
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(getApplicationContext(), ACCESS_FINE_LOCATION);
 
@@ -392,8 +412,7 @@ public void onBackPressed() {
                 if (grantResults.length > 0) {
                     boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                     if (locationAccepted ) {
-                        //Intent intent = new Intent(salesname_main_dashboard.this, show_shop_on_map_activity.class);
-                     //   startActivity(intent);
+                       // startActivity(new Intent(main_dashboard_activity.this,how_shops_on_map_activity.class));
                         //Snackbar.make(getCurrentFocus(), "Permission Granted, Now you can access location data and camera.", Snackbar.LENGTH_LONG).show();
                     }else {
 

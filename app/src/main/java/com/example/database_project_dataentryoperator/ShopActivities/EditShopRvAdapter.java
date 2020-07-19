@@ -13,13 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.database_project_dataentryoperator.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EditShopRvAdapter extends RecyclerView.Adapter<EditShopRvAdapter.ViewHolder>
 {
-    private ArrayList<ShopDetails> shopDetailsArrayList;
+    private List<ShopDetails> shopDetailsArrayList;
     private Activity activity;
 
-    public EditShopRvAdapter(ArrayList<ShopDetails> shopDetailsArrayList, Activity activity)
+    public EditShopRvAdapter(List<ShopDetails> shopDetailsArrayList, Activity activity)
     {
         this.shopDetailsArrayList = shopDetailsArrayList;
         this.activity = activity;
@@ -47,6 +48,37 @@ public class EditShopRvAdapter extends RecyclerView.Adapter<EditShopRvAdapter.Vi
         return shopDetailsArrayList.size();
     }
 
+    public void updateList(String search, List<ShopDetails>  shopDetailsList ) {
+        if(search.equals(""))
+        {
+            if(!(shopDetailsList.size()==shopDetailsArrayList.size()))
+            {
+                this.shopDetailsArrayList.clear();
+                List<ShopDetails> empty = new ArrayList<>();
+                for (int i=0; i< shopDetailsList.size(); i++) {
+                    empty.add(shopDetailsList.get(i));
+                }
+                this.shopDetailsArrayList=empty;
+                notifyDataSetChanged();
+            }
+
+
+
+        }
+        if(!search.equals(""))
+        {
+
+            List<ShopDetails>  temps = new ArrayList<>();
+            for (int i=0; i< shopDetailsList.size(); i++) {
+                if (shopDetailsList.get(i).getShopName().toLowerCase().contains(search.toLowerCase())) {
+                    temps.add(shopDetailsList.get(i));
+                }
+            }
+            this.shopDetailsArrayList = temps;
+            notifyDataSetChanged();
+        }
+
+    }
     class ViewHolder extends RecyclerView.ViewHolder
     {
         TextView shopName,ownerName,ownerCnic;

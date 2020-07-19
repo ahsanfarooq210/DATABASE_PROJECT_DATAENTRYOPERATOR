@@ -59,13 +59,17 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
     public void updateList(String search, List<ShopDetails>  shopDetailsList ) {
         if(search.equals(""))
         {
-            this.shopDetailsArrayList.clear();
-            List<ShopDetails> empty = new ArrayList<>();
-            for (int i=0; i< shopDetailsList.size(); i++) {
-                empty.add(shopDetailsList.get(i));
+            if(!(shopDetailsList.size()==shopDetailsArrayList.size()))
+            {
+                this.shopDetailsArrayList.clear();
+                List<ShopDetails> empty = new ArrayList<>();
+                for (int i=0; i< shopDetailsList.size(); i++) {
+                    empty.add(shopDetailsList.get(i));
+                }
+                this.shopDetailsArrayList=empty;
+                notifyDataSetChanged();
             }
-            this.shopDetailsArrayList=empty;
-            notifyDataSetChanged();
+
 
 
         }
@@ -74,7 +78,7 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
 
             List<ShopDetails>  temps = new ArrayList<>();
             for (int i=0; i< shopDetailsList.size(); i++) {
-                if (shopDetailsList.get(i).getOwnerName().toLowerCase().contains(search.toLowerCase())) {
+                if (shopDetailsList.get(i).getShopName().toLowerCase().contains(search.toLowerCase())) {
                     temps.add(shopDetailsList.get(i));
                 }
             }

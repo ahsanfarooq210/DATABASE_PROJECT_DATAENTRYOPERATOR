@@ -50,6 +50,8 @@ public class delete_shop extends AppCompatActivity implements ActionBar.OnNaviga
     SearchView searchView;
     // Refresh menu item
     private MenuItem refreshMenuItem;
+    //
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -68,10 +70,10 @@ public class delete_shop extends AppCompatActivity implements ActionBar.OnNaviga
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_main_actions, menu);
+        inflater.inflate(R.menu.menu_for_delete, menu);
         // Associate searchable configuration with the SearchView
         searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search)
+        searchView = (SearchView) menu.findItem(R.id.Action_Search)
                 .getActionView();
         assert searchManager != null;
         searchView.setSearchableInfo(searchManager
@@ -102,14 +104,14 @@ public class delete_shop extends AppCompatActivity implements ActionBar.OnNaviga
     public boolean onOptionsItemSelected(MenuItem item) {
         // Take appropriate action for each action item click
         switch (item.getItemId()) {
-            case R.id.action_search:
+            case R.id.Action_Search:
                 // search action
                 return true;
            /* case R.id.action_location_found:
                 // location found
 
                 return true;*/
-            case R.id.action_refresh:
+            case R.id.Action_Refresh:
                 // refresh
                 refreshMenuItem = item;
                 // load the data from server
@@ -194,7 +196,7 @@ public class delete_shop extends AppCompatActivity implements ActionBar.OnNaviga
                 }
                 DeleteShopRvAapter deleteShopRvAapter=new DeleteShopRvAapter(shopDetailsArrayList,delete_shop.this);
                 recyclerView.setAdapter(deleteShopRvAapter);
-                
+
             }
 
             @Override
