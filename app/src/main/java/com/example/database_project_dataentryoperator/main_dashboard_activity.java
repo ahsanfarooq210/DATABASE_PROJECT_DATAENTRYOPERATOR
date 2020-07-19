@@ -39,6 +39,7 @@ import com.example.database_project_dataentryoperator.ShopActivities.add_shops_a
 import com.example.database_project_dataentryoperator.ShopActivities.Show_Shop_Activity;
 import com.example.database_project_dataentryoperator.ShopActivities.Edit_shops_rv_activity;
 
+import com.example.database_project_dataentryoperator.ShopActivities.delete_shop;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -432,4 +433,8 @@ public void onBackPressed() {
     }
 
 
+    public void deleteShop(View view)
+    {
+        startActivity(new Intent(main_dashboard_activity.this, delete_shop.class));
+    }
 }
