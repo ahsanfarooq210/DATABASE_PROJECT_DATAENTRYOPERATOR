@@ -23,7 +23,11 @@ android {
     }
 
 }
-
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -34,6 +38,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     testImplementation 'junit:junit:4.12'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
@@ -91,5 +96,8 @@ dependencies {
 
     //expand pane
     implementation 'com.github.florent37:expansionpanel:1.2.4'
+
+//A beautiful searchview with animations.
+    compile 'com.github.fevziomurtekin:SearchView:0.1.1'
 
 }

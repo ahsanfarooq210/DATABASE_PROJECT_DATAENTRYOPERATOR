@@ -98,7 +98,7 @@ public class main_dashboard_activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_dashboard_activity);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_app_bar_main);
         setSupportActionBar(toolbar);
 
         mHandler = new Handler();

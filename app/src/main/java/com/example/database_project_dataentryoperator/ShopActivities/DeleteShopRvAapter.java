@@ -1,10 +1,14 @@
 package com.example.database_project_dataentryoperator.ShopActivities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,13 +20,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.ViewHolder>
 {
-    private ArrayList<ShopDetails> shopDetailsArrayList;
+    private List<ShopDetails> shopDetailsArrayList;
     private Activity activity;
 
-    public DeleteShopRvAapter(ArrayList<ShopDetails> shopDetailsArrayList, Activity activity)
+    public DeleteShopRvAapter(List<ShopDetails> shopDetailsArrayList, Activity activity)
     {
         this.shopDetailsArrayList = shopDetailsArrayList;
         this.activity = activity;
@@ -51,11 +56,39 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
         return shopDetailsArrayList.size();
     }
 
+    public void updateList(String search, List<ShopDetails>  shopDetailsList ) {
+        if(search.equals(""))
+        {
+            this.shopDetailsArrayList.clear();
+            List<ShopDetails> empty = new ArrayList<>();
+            for (int i=0; i< shopDetailsList.size(); i++) {
+                empty.add(shopDetailsList.get(i));
+            }
+            this.shopDetailsArrayList=empty;
+            notifyDataSetChanged();
+
+
+        }
+        if(!search.equals(""))
+        {
+
+            List<ShopDetails>  temps = new ArrayList<>();
+            for (int i=0; i< shopDetailsList.size(); i++) {
+                if (shopDetailsList.get(i).getOwnerName().toLowerCase().contains(search.toLowerCase())) {
+                    temps.add(shopDetailsList.get(i));
+                }
+            }
+            this.shopDetailsArrayList = temps;
+            notifyDataSetChanged();
+        }
+
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder
     {
         TextView shopName, ownerName, ownerCnic;
 
-        public ViewHolder(@NonNull View itemView)
+        public ViewHolder(@NonNull final View itemView)
         {
             super(itemView);
             shopName = itemView.findViewById(R.id.show_shop_rv_layout_shopname);
@@ -66,12 +99,47 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
                 @Override
                 public void onClick(View v)
                 {
-                    String id = shopDetailsArrayList.get(getAdapterPosition()).getId();
-                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("SHOP").child(id);
-                    reference.removeValue();
-                    activity.finish();
-                    activity.startActivity(new Intent(activity, delete_shop.class));
-                    Toast.makeText(activity, "Successfully deleted", Toast.LENGTH_SHORT).show();
+                    ViewGroup viewGroup = itemView.findViewById(android.R.id.content);
+                    View dialogView = LayoutInflater.from(itemView.getContext()).inflate(R.layout.dialog_for_delete_confirmation, viewGroup, false);
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
+                    builder.setView(dialogView);
+
+
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    Button dialog_yes_Button = (Button)dialogView.findViewById(R.id.yes_button);
+                    dialog_yes_Button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                            String id = shopDetailsArrayList.get(getAdapterPosition()).getId();
+                            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("SHOP").child(id);
+                            reference.removeValue();
+                            activity.finish();
+                            activity.startActivity(new Intent(activity, delete_shop.class));
+                            Toast.makeText(activity, "Successfully deleted", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }); Button dialog_no_Button = (Button)dialogView.findViewById(R.id.No_button);
+                    dialog_no_Button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+                            //Fragment fragment=new View_Today_Report_Fragment();
+
+
+                        }
+                    });
+                    Button dialog_cancel_Button = (Button)dialogView.findViewById(R.id.cancel_button);
+                    dialog_cancel_Button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alertDialog.dismiss();
+
+                        }
+                    });
+
+                    alertDialog.show();
                 }
             });
 
