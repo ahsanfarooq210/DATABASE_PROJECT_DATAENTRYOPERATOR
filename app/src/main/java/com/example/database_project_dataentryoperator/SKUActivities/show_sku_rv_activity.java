@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
@@ -112,10 +113,12 @@ public class show_sku_rv_activity extends AppCompatActivity
      * Async task to load the data from server
      * **/
     private class SyncData extends AsyncTask<String, Void, String> {
+
         @Override
         protected void onPreExecute() {
             // set the progress bar view
             refreshMenuItem.setActionView(R.layout.action_progressbar);
+                    //.setActionView(R.drawable.progress_bar_ring);
             refreshMenuItem.expandActionView();
         }
 

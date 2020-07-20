@@ -18,7 +18,6 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +29,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import com.example.database_project_dataentryoperator.ProfileActivities.activity_Edit_Profile;
-import com.example.database_project_dataentryoperator.ProfileActivities.activity_View_Profile;
-import com.example.database_project_dataentryoperator.ProfileActivities.setting_activity;
+import com.example.database_project_dataentryoperator.ProfileActivities.Activites.activity_Edit_Profile;
+import com.example.database_project_dataentryoperator.ProfileActivities.Activites.activity_View_Profile;
+import com.example.database_project_dataentryoperator.ProfileActivities.Activites.setting_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.Main_dashboard_adding_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.main_dashboard_delete_sku_activity;
 import com.example.database_project_dataentryoperator.SKUActivities.show_sku_rv_activity;
@@ -41,7 +40,6 @@ import com.example.database_project_dataentryoperator.ShopActivities.Show_Shop_A
 import com.example.database_project_dataentryoperator.ShopActivities.Edit_shops_rv_activity;
 
 import com.example.database_project_dataentryoperator.ShopActivities.delete_shop;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

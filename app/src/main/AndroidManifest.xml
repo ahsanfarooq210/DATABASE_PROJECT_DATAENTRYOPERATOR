@@ -28,7 +28,7 @@
             android:label=""
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ProfileActivities.setting_activity"
+            android:name=".ProfileActivities.Activites.setting_activity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -61,11 +61,11 @@
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProfileActivities.activity_Edit_Profile"
+            android:name=".ProfileActivities.Activites.activity_Edit_Profile"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProfileActivities.activity_View_Profile"
+            android:name=".ProfileActivities.Activites.activity_View_Profile"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

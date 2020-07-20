@@ -1,4 +1,4 @@
-package com.example.database_project_dataentryoperator.ProfileActivities;
+package com.example.database_project_dataentryoperator.ProfileActivities.Activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.database_project_dataentryoperator.R;
 import com.example.database_project_dataentryoperator.main_dashboard_activity;

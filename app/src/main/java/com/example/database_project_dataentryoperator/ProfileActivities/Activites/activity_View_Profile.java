@@ -1,4 +1,4 @@
-package com.example.database_project_dataentryoperator.ProfileActivities;
+package com.example.database_project_dataentryoperator.ProfileActivities.Activites;
 
 import androidx.appcompat.app.AppCompatActivity;
 
