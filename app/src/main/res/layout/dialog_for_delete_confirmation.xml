@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/dialog"
     style="@style/Animation.Design.BottomSheetDialog">
     <RelativeLayout
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:layout_marginTop="25dp">
         <ImageView
-
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:text="Do You Really Wants to Delete This"
         android:textAlignment="center"
+        android:id="@+id/text_dialog_confirmation"
         android:textColor="@android:color/holo_red_dark"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:gravity="center_horizontal" />

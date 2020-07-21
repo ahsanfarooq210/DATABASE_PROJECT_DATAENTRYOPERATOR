@@ -1,20 +1,34 @@
 package com.example.database_project_dataentryoperator.ProfileActivities.Activites;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.database_project_dataentryoperator.ProfileActivities.Entity.ProfileData;
 import com.example.database_project_dataentryoperator.main_dashboard_activity;
 import com.example.database_project_dataentryoperator.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class activity_View_Profile extends AppCompatActivity {
-    TextView Name_textView,Cnic_textView,Email_textView,dob_textView,cell_no_textView,education_textView;
+    EditText name_tf_view_profile,cnic_tf_view_profile,email_tf_view_profile,dob_tf_view_profile,contact_number_tf_view_profile,education_tf_view_profile;
+
     Button ok_button,edit_Profile_button;
     //splash screen relative layout
     private RelativeLayout rellay1, rally3, rellay2;
@@ -46,31 +60,43 @@ public class activity_View_Profile extends AppCompatActivity {
         }
     };
 
+    //profileData
+
+    String DataEntryOperatorEmail;
+    boolean isprofileDatacomplete;
+    //database reference
+    private DatabaseReference profileDataReference;
+    //array lists for the array adapters
+    private List<ProfileData> profileDataList;
+    SharedPreferences prefreences ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__view__profile);
-        Name_textView=findViewById(R.id.Name_textView);
-        Cnic_textView=findViewById(R.id.Cnic_textView);
-        Email_textView=findViewById(R.id.Email_textView);
-        dob_textView=findViewById(R.id.dob_textView);
-        cell_no_textView=findViewById(R.id.cell_no_textView);
-        education_textView=findViewById(R.id.education_textView);
+        Intent recIntent=getIntent();
+        prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
+        DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
+        isprofileDatacomplete=prefreences.getBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
 
-        Name_textView.setText("Data Entry Operator ");
+        name_tf_view_profile=findViewById(R.id.name_tf_view_profile);
+        cnic_tf_view_profile=findViewById(R.id.cnic_tf_view_profile);
+        email_tf_view_profile=findViewById(R.id.email_tf_view_profile);
+        dob_tf_view_profile=findViewById(R.id.dob_tf_view_profile);
+        contact_number_tf_view_profile=findViewById(R.id.contact_number_tf_view_profile);
+        education_tf_view_profile=findViewById(R.id.education_tf_view_profile);
 
-        Cnic_textView.setText("33333-1234567-8");
+        //initializing databasee reference for downloading and uploading the data the data
+        profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
+        profileDataReference.keepSynced(true);
+        profileDataList=new ArrayList<>();
 
-        Email_textView.setText("dataentryOpeartor@gmail.com");
-
-        dob_textView.setText("29/02/1996");
-
-        education_textView.setText("BSCS");
         //relative layouts
-        rellay1 = findViewById(R.id.adding_sku_rellay1);
-        rellay2 = findViewById(R.id.adding_sku_rellay2);
-        rally3 = findViewById(R.id.adding_sku_bottom_rally2);
+        rellay1 = findViewById(R.id.adding_view_rellay1);
+        rellay2 = findViewById(R.id.adding_view_rellay2);
+        rally3 = findViewById(R.id.adding_view_bottom_rally2);
 
         //splash screen
         handler.postDelayed(runnable, 500);
@@ -83,8 +109,8 @@ public class activity_View_Profile extends AppCompatActivity {
         ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent sendBack=new Intent(activity_View_Profile.this,main_dashboard_activity.class);
-                startActivity(sendBack);
+                Intent send =new Intent(activity_View_Profile.this, main_dashboard_activity.class);
+                startActivity(send);
             }
         });
         edit_Profile_button.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +118,36 @@ public class activity_View_Profile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent send =new Intent(activity_View_Profile.this, activity_Edit_Profile.class);
                 startActivity(send);
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        profileDataReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                profileDataList.clear();
+                for (DataSnapshot profile : snapshot.getChildren())
+                {
+                    if(profile.getValue(ProfileData.class).getEmail().equals(DataEntryOperatorEmail))
+                    {
+                        profileDataList.add(profile.getValue(ProfileData.class));
+                    }
+                }
+                name_tf_view_profile.setText(profileDataList.get(0).getName());
+                cnic_tf_view_profile.setText(profileDataList.get(0).getCNIC());
+                dob_tf_view_profile.setText(profileDataList.get(0).getDate_of_birth());
+                contact_number_tf_view_profile.setText(profileDataList.get(0).getCell_number());
+                education_tf_view_profile.setText(profileDataList.get(0).getEducation());
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
