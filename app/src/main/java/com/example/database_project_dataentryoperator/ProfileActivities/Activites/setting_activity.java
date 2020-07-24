@@ -40,7 +40,7 @@ public class setting_activity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
     };
-TextInputEditText username_tf_setting,current_password_tf_setting,new_password_tf_setting,confirm_password_tf_setting;
+    TextInputEditText username_tf_setting,current_password_tf_setting,new_password_tf_setting,confirm_password_tf_setting;
     RadioGroup Radio_Group_setting_font,Radio_Group_setting_text_size;
     int select_font,select_text_size;
     RadioButton font_radioButton,textSize_radioButton;

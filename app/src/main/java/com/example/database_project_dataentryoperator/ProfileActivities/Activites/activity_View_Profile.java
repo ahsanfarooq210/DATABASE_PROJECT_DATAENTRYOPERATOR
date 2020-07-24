@@ -97,8 +97,7 @@ public class activity_View_Profile extends AppCompatActivity {
         profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
         profileDataReference.keepSynced(true);
         profileDataList=new ArrayList<>();
-
-        //relative layouts
+     //relative layouts
         rellay1 = findViewById(R.id.adding_view_rellay1);
         rellay2 = findViewById(R.id.adding_view_rellay2);
         rally3 = findViewById(R.id.adding_view_bottom_rally2);
@@ -143,6 +142,7 @@ public class activity_View_Profile extends AppCompatActivity {
                 }
                 name_tf_view_profile.setText(profileDataList.get(0).getName());
                 cnic_tf_view_profile.setText(profileDataList.get(0).getCNIC());
+                email_tf_view_profile.setText(profileDataList.get(0).getEmail());
                 dob_tf_view_profile.setText(profileDataList.get(0).getDate_of_birth());
                 contact_number_tf_view_profile.setText(profileDataList.get(0).getCell_number());
                 education_tf_view_profile.setText(profileDataList.get(0).getEducation());

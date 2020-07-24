@@ -66,13 +66,14 @@ public class MainActivity extends AppCompatActivity
     private List<ProfileData> profileDataList;    DatabaseReference referencecompany,referencecatagory;
     SharedPreferences prefreences ;
     String username,passsword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //initializing databasee reference for downloading and uploading the data the data
-            profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
+        profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
         profileDataReference.keepSynced(true);
         profileDataList=new ArrayList<>();
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
@@ -104,6 +105,8 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+
 
     public void loginButton(View view)
     {
