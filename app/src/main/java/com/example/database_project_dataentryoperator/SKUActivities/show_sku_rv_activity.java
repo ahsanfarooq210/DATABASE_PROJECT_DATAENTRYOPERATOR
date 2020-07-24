@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.Context;
@@ -18,8 +17,6 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.database_project_dataentryoperator.R;
-import com.example.database_project_dataentryoperator.ShopActivities.DeleteShopRvAapter;
-import com.example.database_project_dataentryoperator.ShopActivities.delete_shop;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -57,7 +54,7 @@ public class show_sku_rv_activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_for_delete, menu);
+        inflater.inflate(R.menu.search_view_for_recylce_view, menu);
         // Associate searchable configuration with the SearchView
         searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.Action_Search)

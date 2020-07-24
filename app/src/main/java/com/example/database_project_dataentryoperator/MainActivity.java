@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
         }
     };
     EditText usernameTf,passeordTf;
-
+    boolean found=false;
     private FirebaseAuth mAuth;
     //profileData
 //database reference
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         profileDataReference.keepSynced(true);
         profileDataList=new ArrayList<>();
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
-
+        found=prefreences.getBoolean(getString(R.string.SharedPreferences_isProfileDataComplete),false);
 
         rellay1 = findViewById(R.id.rellay1);
 
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity
     }
     private void whereTo() {
 
-        boolean found=false;
+
         for (int i=0; i<profileDataList.size();i++)
         {
             if(profileDataList.get(i).getEmail().equals(username))
@@ -176,7 +176,13 @@ public class MainActivity extends AppCompatActivity
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 profileDataList.clear();
                 for (DataSnapshot profile : dataSnapshot.getChildren()) {
-                    profileDataList.add(profile.getValue(ProfileData.class));
+                    if (profile.getValue(ProfileData.class).getEmail().equals(username)) {
+                        profileDataList.add(profile.getValue(ProfileData.class));
+                    }
+                }
+                if(mAuth.getCurrentUser()!=null)
+                {
+                    whereTo();
                 }
             }
 

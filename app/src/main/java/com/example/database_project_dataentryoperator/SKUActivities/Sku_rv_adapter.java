@@ -77,12 +77,12 @@ public class Sku_rv_adapter extends RecyclerView.Adapter<Sku_rv_adapter.ViewHold
                 /*if (skuArray.get(i).getCompany().getName().toLowerCase().contains(search.toLowerCase())) {
                     temps.add(skuArray.get(i));
                 }*/
+
                 if (skuArray.get(i).getProductName().toLowerCase().contains(search.toLowerCase())) {
                     temps.add(skuArray.get(i));
                 }
-               /*else if (skuArray.get(i).getSize()==Integer.parseInt(search)) {
-                    temps.add(skuArray.get(i));
-                }*/
+
+
             }
             //
             this.skuArrayList = temps;

@@ -11,13 +11,16 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -85,10 +88,16 @@ public class activity_Edit_Profile extends AppCompatActivity {
     private List<ProfileData> profileDataList;
     SharedPreferences prefreences ;
     ScrollView scrollView_edit_Profile;
+    ImageView profile_imgView_logo_edit;
+    TextView profile_imgView_logo_edit_error;
+    boolean imageBoolean=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__edit__profile);
+        profile_imgView_logo_edit_error=findViewById(R.id.profile_imgView_logo_edit_error);
+        profile_imgView_logo_edit=findViewById(R.id.profile_imgView_logo_edit);
+        registerForContextMenu(profile_imgView_logo_edit);
         Intent recIntent=getIntent();
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
         DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
@@ -154,6 +163,7 @@ public class activity_Edit_Profile extends AppCompatActivity {
                 });
             }
         }
+
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

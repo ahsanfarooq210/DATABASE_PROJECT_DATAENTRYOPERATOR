@@ -16,21 +16,45 @@
         android:gravity="center"
         android:animateLayoutChanges="true">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:id="@+id/image_relativeLayout"
+            >
+            <ImageView
+                android:id="@+id/profile_imgView_logo_edit"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_twotone_account_circle_24" />
 
-        <ImageView
-            android:id="@+id/profile_imgView_logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_twotone_account_circle_24" />
+            <!-- Fake TextView to use to set in an error state to allow an error to be shown for the TextView -->
+            <android.widget.TextView
+                android:id="@+id/profile_imgView_logo_edit_error"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Please choose image by long click here "
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_alignRight="@id/profile_imgView_logo_edit"
+                android:layout_alignBottom="@id/profile_imgView_logo_edit"
+                android:layout_marginTop="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="50dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/adding_sku_rellay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:layout_below="@id/profile_imgView_logo"
+            android:layout_below="@id/image_relativeLayout"
             android:animateLayoutChanges="true">
 
             <TextView

@@ -56,15 +56,15 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
         return shopDetailsArrayList.size();
     }
 
-    public void updateList(String search, List<ShopDetails>  shopDetailsList ) {
+    public void updateList(String search, List<ShopDetails>  searchList ) {
         if(search.equals(""))
         {
-            if(!(shopDetailsList.size()==shopDetailsArrayList.size()))
+            if(!(searchList.size()==shopDetailsArrayList.size()))
             {
                 this.shopDetailsArrayList.clear();
                 List<ShopDetails> empty = new ArrayList<>();
-                for (int i=0; i< shopDetailsList.size(); i++) {
-                    empty.add(shopDetailsList.get(i));
+                for (int i=0; i< searchList.size(); i++) {
+                    empty.add(searchList.get(i));
                 }
                 this.shopDetailsArrayList=empty;
                 notifyDataSetChanged();
@@ -77,9 +77,14 @@ public class DeleteShopRvAapter extends RecyclerView.Adapter<DeleteShopRvAapter.
         {
 
             List<ShopDetails>  temps = new ArrayList<>();
-            for (int i=0; i< shopDetailsList.size(); i++) {
-                if (shopDetailsList.get(i).getShopName().toLowerCase().contains(search.toLowerCase())) {
-                    temps.add(shopDetailsList.get(i));
+            for (int i=0; i< searchList.size(); i++) {
+                String shop=searchList.get(i).getShopName().toLowerCase();
+                if (shop.compareToIgnoreCase(search)==0 ) {
+                    temps.add(searchList.get(i));
+                }
+                if(searchList.get(i).getOwnerName().toLowerCase().contains(search.toLowerCase()))
+                {
+                    temps.add(searchList.get(i));
                 }
             }
             this.shopDetailsArrayList = temps;

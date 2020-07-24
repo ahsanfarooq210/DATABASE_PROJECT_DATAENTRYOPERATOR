@@ -54,7 +54,7 @@ public class Edit_shops_rv_activity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_for_delete, menu);
+        inflater.inflate(R.menu.search_view_for_recylce_view, menu);
         // Associate searchable configuration with the SearchView
         searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.Action_Search)

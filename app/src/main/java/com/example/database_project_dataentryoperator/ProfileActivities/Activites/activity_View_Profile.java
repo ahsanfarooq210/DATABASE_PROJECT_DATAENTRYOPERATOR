@@ -7,12 +7,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.database_project_dataentryoperator.ProfileActivities.Entity.ProfileData;
 import com.example.database_project_dataentryoperator.main_dashboard_activity;
@@ -77,6 +81,7 @@ public class activity_View_Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__view__profile);
         Intent recIntent=getIntent();
+
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
         DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
         isprofileDatacomplete=prefreences.getBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
