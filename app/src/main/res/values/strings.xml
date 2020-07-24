@@ -90,10 +90,10 @@
     <string name="profile">Profile</string>
     <string name="name">Name :</string>
     <string name="dob">Date of Birth :</string>
-    <string name="cnic">CNIC</string>
+    <string name="cnic">CNIC : </string>
     <string name="email">Email : </string>
     <string name="cell">Contact Number : </string>
-    <string name="education">Education</string>
+    <string name="education">Education : </string>
     <string name="cancel">Cancel</string>
     <string name="save">Save </string>
     <string name="confirm_location">Confirm Location</string>
