@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity
 //database reference
     private DatabaseReference profileDataReference;
     //array lists for the array adapters
-    private List<ProfileData> profileDataList;    DatabaseReference referencecompany,referencecatagory;
+    private List<ProfileData> profileDataList;
     SharedPreferences prefreences ;
     String username,passsword;
 
@@ -97,10 +97,6 @@ public class MainActivity extends AppCompatActivity
 
         mAuth = FirebaseAuth.getInstance();
 
-        referencecompany=FirebaseDatabase.getInstance().getReference().child("CATAGORY");
-        referencecatagory=FirebaseDatabase.getInstance().getReference().child("COMPANIES");
-        referencecatagory.keepSynced(true);
-        referencecompany.keepSynced(true);
 
 if (mAuth.getCurrentUser()!=null)
 {
