@@ -102,7 +102,10 @@ public class MainActivity extends AppCompatActivity
         referencecatagory.keepSynced(true);
         referencecompany.keepSynced(true);
 
-
+if (mAuth.getCurrentUser()!=null)
+{
+    username=prefreences.getString(getString(R.string.SharedPreferences_DataEntryOperator),"");
+}
 
     }
 

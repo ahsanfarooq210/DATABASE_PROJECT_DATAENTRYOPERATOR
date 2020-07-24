@@ -25,6 +25,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -83,7 +84,9 @@ public class activity_View_Profile extends AppCompatActivity {
         Intent recIntent=getIntent();
 
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
+
         DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
+
         isprofileDatacomplete=prefreences.getBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
 
         name_tf_view_profile=findViewById(R.id.name_tf_view_profile);
@@ -94,7 +97,7 @@ public class activity_View_Profile extends AppCompatActivity {
         education_tf_view_profile=findViewById(R.id.education_tf_view_profile);
 
         //initializing databasee reference for downloading and uploading the data the data
-        profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
+        profileDataReference = FirebaseDatabase.getInstance().getReference().child("DataEntryOperatorProfileData");
         profileDataReference.keepSynced(true);
         profileDataList=new ArrayList<>();
      //relative layouts
@@ -129,6 +132,7 @@ public class activity_View_Profile extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         profileDataReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
