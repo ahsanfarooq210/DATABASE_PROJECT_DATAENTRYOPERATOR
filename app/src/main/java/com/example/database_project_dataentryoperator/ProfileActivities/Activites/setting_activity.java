@@ -321,7 +321,7 @@ public class setting_activity extends AppCompatActivity {
         public void run()
         {
             progressBarh.postDelayed(runnable1,0);
-            Intent intent=new Intent(setting_activity.this, MainActivity.class);
+            Intent intent=new Intent(setting_activity.this, MainActivity .class);
             startActivity(intent);
         }
     };
