@@ -74,10 +74,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 //initializing databasee reference for downloading and uploading the data the data
         profileDataReference = FirebaseDatabase.getInstance().getReference("DataEntryOperatorProfileData");
-        profileDataReference.keepSynced(true);
-        profileDataList=new ArrayList<>();
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
         found=prefreences.getBoolean(getString(R.string.SharedPreferences_isProfileDataComplete),false);
+
+        profileDataReference.keepSynced(true);
+        profileDataList=new ArrayList<>();
+        profileDataList.clear();
+
 
         rellay1 = findViewById(R.id.rellay1);
 
@@ -98,10 +101,11 @@ public class MainActivity extends AppCompatActivity
         mAuth = FirebaseAuth.getInstance();
 
 
-if (mAuth.getCurrentUser()!=null)
-{
-    username=prefreences.getString(getString(R.string.SharedPreferences_DataEntryOperator),"");
-}
+        if (mAuth.getCurrentUser()!=null)
+        {
+             username=prefreences.getString(getString(R.string.SharedPreferences_DataEntryOperatorEmail),"");
+             passsword=prefreences.getString(getString(R.string.SharedPreferences_DataEntryOperatorpassword),"");
+        }
 
     }
 
@@ -152,17 +156,21 @@ if (mAuth.getCurrentUser()!=null)
         if (!found) {
             // activity_Edit_Profile
             SharedPreferences.Editor editor = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE).edit();
-            editor.putString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),username);
+            editor.putString(getResources().getString(R.string.SharedPreferences_DataEntryOperatorEmail),username);
+            editor.putString(getString(R.string.SharedPreferences_DataEntryOperatorpassword),passsword);
             editor.putBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
             editor.commit();
             Intent edit_profile=new Intent(MainActivity.this, activity_Edit_Profile.class);
             progressBarh.postDelayed(runnable1, 100);
             startActivity(edit_profile);
-        } else {
+        }
+        if(found){
             Intent intent = new Intent(MainActivity.this, main_dashboard_activity.class);
             // activity_Edit_Profile
             SharedPreferences.Editor editor = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE).edit();
-            editor.putString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),username);
+            editor.putString(getResources().getString(R.string.SharedPreferences_DataEntryOperatorEmail),username);
+            editor.putString(getString(R.string.SharedPreferences_DataEntryOperatorpassword),passsword);
+
             editor.putBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),true);
             editor.commit();
             progressBarh.postDelayed(runnable1, 100);
@@ -178,9 +186,7 @@ if (mAuth.getCurrentUser()!=null)
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 profileDataList.clear();
                 for (DataSnapshot profile : dataSnapshot.getChildren()) {
-                    if (profile.getValue(ProfileData.class).getEmail().equals(username)) {
                         profileDataList.add(profile.getValue(ProfileData.class));
-                    }
                 }
                 if(mAuth.getCurrentUser()!=null)
                 {

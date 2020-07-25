@@ -99,7 +99,8 @@
     <string name="confirm_location">Confirm Location</string>
     <!--SharedPreferences.-->
     <string name="SharedPreferences_FileName">com.example.DataEntryOperator.profileData</string>
-    <string name="SharedPreferences_DataEntryOperator">DataEntryOperatorEmail</string>
+    <string name="SharedPreferences_DataEntryOperatorEmail">DataEntryOperatorEmail</string>
+    <string name="SharedPreferences_DataEntryOperatorpassword">DataEntryOperatorPassword</string>
     <string name="SharedPreferences_isProfileDataComplete">isProfileDataComplete</string>
 
 </resources>

@@ -100,7 +100,7 @@ public class activity_Edit_Profile extends AppCompatActivity {
         registerForContextMenu(profile_imgView_logo_edit);
         Intent recIntent=getIntent();
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
-        DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
+        DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperatorEmail),"");
         isprofileDatacomplete=prefreences.getBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
 
         auth=FirebaseAuth.getInstance();
@@ -257,8 +257,8 @@ public class activity_Edit_Profile extends AppCompatActivity {
                     }
 
                     String id = profileDataReference.push().getKey();
-
-                    ProfileData profileData = new ProfileData(id, name, CNIC, DataEntryOperatorEmail, Date_of_birth, cell_number, Education);
+                    String password=prefreences.getString(getString(R.string.SharedPreferences_DataEntryOperatorpassword),"");
+                    ProfileData profileData = new ProfileData(id, name, CNIC, DataEntryOperatorEmail, Date_of_birth, cell_number, Education,password);
 
                     if (id != null) {
                         profileDataReference.child(id).setValue(profileData);

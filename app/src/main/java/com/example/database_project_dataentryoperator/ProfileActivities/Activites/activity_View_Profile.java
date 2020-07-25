@@ -85,7 +85,7 @@ public class activity_View_Profile extends AppCompatActivity {
 
         prefreences = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE);
 
-        DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperator),"");
+        DataEntryOperatorEmail=prefreences.getString(getResources().getString(R.string.SharedPreferences_DataEntryOperatorEmail),"");
 
         isprofileDatacomplete=prefreences.getBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
 

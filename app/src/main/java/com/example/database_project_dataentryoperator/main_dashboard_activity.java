@@ -13,6 +13,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Build;
@@ -310,7 +311,13 @@ public void onBackPressed() {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
             //Toast.makeText(getApplicationContext(), "Logout user!", Toast.LENGTH_LONG).show();
-            FirebaseAuth.getInstance().signOut();
+            firebaseAuth.getInstance().signOut();
+            SharedPreferences.Editor editor = getSharedPreferences(getResources().getString(R.string.SharedPreferences_FileName),MODE_PRIVATE).edit();
+            editor.putString(getResources().getString(R.string.SharedPreferences_DataEntryOperatorEmail),"");
+            editor.putString(getString(R.string.SharedPreferences_DataEntryOperatorpassword),"");
+
+            editor.putBoolean(getResources().getString(R.string.SharedPreferences_isProfileDataComplete),false);
+            editor.commit();
             Intent intent=new Intent(main_dashboard_activity.this, MainActivity.class);
             startActivity(intent);
             return true;
